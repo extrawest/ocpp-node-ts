@@ -4,7 +4,7 @@ import { SecureContextOptions } from 'tls';
 import { createServer as createHttpsServer } from 'https';
 import { createServer as createHttpServer, IncomingMessage } from 'http';
 import stream from 'node:stream';
-import { OCPP_PROTOCOL_1_6 } from './schemas';
+import { OCPP_PROTOCOL_2_0_1 } from './schemas';
 import { Client } from './Client';
 import { OcppClientConnection } from '../OcppClientConnection';
 import { Protocol } from './Protocol';
@@ -25,8 +25,8 @@ export class Server extends EventEmitter {
     const wss = new WebSocketServer({
       noServer: true,
       handleProtocols: (protocols: Set<string>) => {
-        if (protocols.has(OCPP_PROTOCOL_1_6)) {
-          return OCPP_PROTOCOL_1_6;
+        if (protocols.has(OCPP_PROTOCOL_2_0_1)) {
+          return OCPP_PROTOCOL_2_0_1;
         }
         return false;
       },

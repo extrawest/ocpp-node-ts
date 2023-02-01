@@ -1,7 +1,7 @@
 const {compileFromFile} = require("json-schema-to-typescript");
 const fs = require("fs");
 
-fs.readdir(__dirname + "/schemas/", function (err: any, files: string[]) {
+fs.readdir(__dirname + "/../src/schemas/", function (err: any, files: string[]) {
     //handling error
     if (err) {
         return console.log("Unable to scan directory: " + err);
@@ -9,12 +9,13 @@ fs.readdir(__dirname + "/schemas/", function (err: any, files: string[]) {
     //listing all files using forEach
     files.forEach(function (file: string) {
         // compile from file
-        compileFromFile(__dirname + "/schemas/" + file).then((ts: any) =>
+        /*compileFromFile(__dirname + "/../src/schemas/" + file).then((ts: any) =>
             fs.writeFileSync(
-                __dirname + "/types/" + file.replace(".json", ".d.ts"),
+                __dirname + "/../src/types/" + file.replace(".json", ".ts"),
                 ts
             )
-        );
-        console.log(file);
+        );*/
+        //console.log("import " + file.replace('.json', '') + " from " +  "'../schemas/" + file+"'");
+        console.log(file.replace('.json', ','));
     });
 });
