@@ -1,8 +1,6 @@
 import { Server } from "../src/impl/Server";
 import { SchemaValidator } from "../src/impl/SchemaValidator";
-import BootNotification from "../src/ocpp-1.6-schemas/BootNotification.json"
-import ChangeAvailability from "../src/ocpp-1.6-schemas/ChangeAvailability.json"
-import GetConfiguration from "../src/ocpp-1.6-schemas/GetConfiguration.json"
+import BootNotification from "../src/schemas/BootNotification.json"
 
 import {
   ERROR_FORMATIONVIOLATION,
@@ -23,8 +21,11 @@ describe('OcppSchema', () => {
     const validator = new SchemaValidator(BootNotification);
     const t = () => {
       validator.validate({
-        "chargePointVendor": 90,
-        "chargePointModel": 1
+        chargingStation: {
+          model: 90,
+          vendorName: "sad"
+        },
+        reason: "sdfsdf"
       })
     }
     expect(t).toThrow(ERROR_TYPECONSTRAINTVIOLATION)
@@ -34,8 +35,11 @@ describe('OcppSchema', () => {
     const validator = new SchemaValidator(BootNotification);
     const t = () => {
       validator.validate({
-        "chargePointVendor": 'long striiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing',
-        "chargePointModel": 'dfdsfdsf'
+        chargingStation: {
+          model: "sdassssssssssssssssssssssssssssssssssssssssssssssssss",
+          vendorName: "sad"
+        },
+        reason: "sdfsdf"
       })
     }
     expect(t).toThrow(ERROR_PROPERTYCONSTRAINTVIOLATION)
@@ -45,18 +49,24 @@ describe('OcppSchema', () => {
     const validator = new SchemaValidator(BootNotification);
     const t = () => {
       validator.validate({
-        "chargePointModel": 'dfdsfdsf'
+        chargingStation: {
+          model: "sda",
+          vendorName: "sad"
+        }
       })
     }
     expect(t).toThrow(ERROR_PROTOCOLERROR)
   });
 
   it('should throw property violation for invalid enum value', () => {
-    const validator = new SchemaValidator(ChangeAvailability);
+    const validator = new SchemaValidator(BootNotification);
     const t = () => {
       validator.validate({
-        "connectorId": 2,
-        "type": "Fail"
+        chargingStation: {
+          model: "sda",
+          vendorName: "sad"
+        },
+        reason: "sdfsdf"
       })
     }
     expect(t).toThrow(ERROR_PROPERTYCONSTRAINTVIOLATION)
