@@ -1,8 +1,10 @@
 import { IncomingMessage } from 'http';
 import fs from 'fs';
 import {
-  OcppServer, OcppClientConnection, BootNotificationRequest, BootNotificationResponse,
-} from '../src';
+  OcppServer, OcppClientConnection
+} from '../src/';
+import {UrnOCPPCp220203BootNotificationRequest} from '../src/types/BootNotification'
+import {UrnOCPPCp220203BootNotificationResponse} from '../src/types/BootNotificationResponse'
 
 const cs = new OcppServer();
 cs.on('connection', (client: OcppClientConnection) => {
@@ -11,8 +13,8 @@ cs.on('connection', (client: OcppClientConnection) => {
     console.log(`Client ${client.getCpId()} closed connection`, code, reason.toString());
   });
 
-  client.on('BootNotification', (request: BootNotificationRequest, cb: (response: BootNotificationResponse) => void) => {
-    const response: BootNotificationResponse = {
+  client.on('BootNotification', (request: UrnOCPPCp220203BootNotificationRequest, cb: (response: UrnOCPPCp220203BootNotificationResponse) => void) => {
+    const response: UrnOCPPCp220203BootNotificationResponse = {
       status: 'Accepted',
       currentTime: new Date().toISOString(),
       interval: 60,

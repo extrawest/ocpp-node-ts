@@ -1,6 +1,10 @@
 import {
-  OcppError, OcppClient, BootNotificationRequest, BootNotificationResponse, StartTransactionRequest, StartTransactionResponse,
+  OcppError, OcppClient
 } from '../src';
+import {UrnOCPPCp220203BootNotificationRequest} from '../src/types/BootNotification'
+import {UrnOCPPCp220203BootNotificationResponse} from '../src/types/BootNotificationResponse'
+import {UrnOCPPCp220203TransactionEventRequest} from "../src/types/TransactionEventRequest";
+import {UrnOCPPCp220203TransactionEventResponse} from "../src/types/TransactionEventResponse";
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -12,22 +16,34 @@ cp.on('close', () => {
   console.log('Connection closed');
 });
 cp.on('connect', async () => {
-  const boot: BootNotificationRequest = {
-    chargePointVendor: 'eParking',
-    chargePointModel: 'NECU-T2',
+  const boot: UrnOCPPCp220203BootNotificationRequest = {
+    chargingStation: {
+      model: "sda",
+      vendorName: "sad"
+    },
+    reason: "Unknown"
   };
 
   try {
-    const bootResp: BootNotificationResponse = await cp.callRequest('BootNotification', boot);
+    const bootResp: UrnOCPPCp220203BootNotificationResponse = await cp.callRequest('BootNotification', boot);
     if (bootResp.status === 'Accepted') {
-      const transaction: StartTransactionRequest = {
-        connectorId: 0,
-        idTag: '1234',
-        meterStart: 0,
-        timestamp: new Date().toISOString(),
+      const transaction: UrnOCPPCp220203TransactionEventRequest = {
+        eventType: "Started",
+        meterValue: [
+          {
+            sampledValue:[{value:1}], timestamp:new Date().toISOString()
+          }
+        ],
+        timestamp:new Date().toISOString(),
+        triggerReason:"Authorized",
+        seqNo:10,
+        transactionInfo:{
+          transactionId:"1",
+          remoteStartId:10
+        }
       };
-      const transactionResp: StartTransactionResponse = await cp.callRequest('StartTransaction', transaction);
-      if (transactionResp.idTagInfo.status === 'Accepted') {
+      const transactionResp: UrnOCPPCp220203TransactionEventResponse = await cp.callRequest('TransactionEvent', transaction);
+      if ( transactionResp.idTokenInfo?.status === 'Accepted') {
         console.log('Starting transaction...');
       }
     }
