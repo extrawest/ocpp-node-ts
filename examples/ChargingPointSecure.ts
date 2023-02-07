@@ -1,10 +1,10 @@
 import {
   OcppError, OcppClient
 } from '../src';
-import {UrnOCPPCp220203BootNotificationRequest} from '../src/types/BootNotification'
-import {UrnOCPPCp220203BootNotificationResponse} from '../src/types/BootNotificationResponse'
-import {UrnOCPPCp220203TransactionEventRequest} from "../src/types/TransactionEventRequest";
-import {UrnOCPPCp220203TransactionEventResponse} from "../src/types/TransactionEventResponse";
+import {BootNotificationRequest} from '../src/index'
+import {BootNotificationResponse} from '../src/index'
+import {TransactionEventRequest} from "../src/index";
+import {TransactionEventResponse} from "../src/index";
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -16,7 +16,7 @@ cp.on('close', () => {
   console.log('Connection closed');
 });
 cp.on('connect', async () => {
-  const boot: UrnOCPPCp220203BootNotificationRequest = {
+  const boot: BootNotificationRequest = {
     chargingStation: {
       model: "sda",
       vendorName: "sad"
@@ -25,9 +25,9 @@ cp.on('connect', async () => {
   };
 
   try {
-    const bootResp: UrnOCPPCp220203BootNotificationResponse = await cp.callRequest('BootNotification', boot);
+    const bootResp: BootNotificationResponse = await cp.callRequest('BootNotification', boot);
     if (bootResp.status === 'Accepted') {
-      const transaction: UrnOCPPCp220203TransactionEventRequest = {
+      const transaction: TransactionEventRequest = {
         eventType: "Started",
         meterValue: [
           {
@@ -42,7 +42,7 @@ cp.on('connect', async () => {
           remoteStartId:10
         }
       };
-      const transactionResp: UrnOCPPCp220203TransactionEventResponse = await cp.callRequest('TransactionEvent', transaction);
+      const transactionResp: TransactionEventResponse = await cp.callRequest('TransactionEvent', transaction);
       if ( transactionResp.idTokenInfo?.status === 'Accepted') {
         console.log('Starting transaction...');
       }
