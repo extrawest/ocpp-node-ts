@@ -1,10 +1,13 @@
 # OCPP
 
-Typescript package implementing the JSON version of the Open Charge Point Protocol (OCPP). Currently OCPP 1.6 is supported.
+Typescript package implementing the JSON version of the Open Charge Point Protocol (OCPP). Currently OCPP 2.0.1 is
+supported.
 
-Open Charge Point Protocol (OCPP, <http://www.openchargealliance.org/>) is a communication protocol between multiple charging stations ("charge points") and a single management software ("central system").
+Open Charge Point Protocol (OCPP, <http://www.openchargealliance.org/>) is a communication protocol between multiple
+charging stations ("charge points") and a single management software ("central system").
 
 ## Installation
+
 ```
 npm i ocpp-ts
 ```
@@ -15,25 +18,25 @@ npm i ocpp-ts
 
 ```ts
 import {
-  OcppServer, OcppClientConnection, BootNotificationRequest, BootNotificationResponse,
+    OcppServer, OcppClientConnection, BootNotificationRequest, BootNotificationResponse,
 } from 'ocpp-ts';
 
 const centralSystemSimple = new OcppServer();
 centralSystemSimple.listen(9220);
 centralSystemSimple.on('connection', (client: OcppClientConnection) => {
-  console.log(`Client ${client.getCpId()} connected`);
-  client.on('close', (code: number, reason: Buffer) => {
-    console.log(`Client ${client.getCpId()} closed connection`, code, reason.toString());
-  });
+    console.log(`Client ${client.getCpId()} connected`);
+    client.on('close', (code: number, reason: Buffer) => {
+        console.log(`Client ${client.getCpId()} closed connection`, code, reason.toString());
+    });
 
-  client.on('BootNotification', (request: BootNotificationRequest, cb: (response: BootNotificationResponse) => void) => {
-    const response: BootNotificationResponse = {
-      status: 'Accepted',
-      currentTime: new Date().toISOString(),
-      interval: 60,
-    };
-    cb(response);
-  });
+    client.on('BootNotification', (request: BootNotificationRequest, cb: (response: BootNotificationResponse) => void) => {
+        const response: BootNotificationResponse = {
+            status: 'Accepted',
+            currentTime: new Date().toISOString(),
+            interval: 60,
+        };
+        cb(response);
+    });
 });
 ```
 
@@ -41,35 +44,38 @@ centralSystemSimple.on('connection', (client: OcppClientConnection) => {
 
 ```ts
 import {
-  BootNotificationRequest,
-  BootNotificationResponse,
-  OcppClient, OcppError,
+    BootNotificationRequest,
+    BootNotificationResponse,
+    OcppClient, OcppError,
 } from 'ocpp-ts';
 
 const chargingPointSimple = new OcppClient('CP1111');
 chargingPointSimple.on('error', (err: Error) => {
-  console.log(err.message);
+    console.log(err.message);
 });
 chargingPointSimple.on('close', () => {
-  console.log('Connection closed');
+    console.log('Connection closed');
 });
 
 chargingPointSimple.on('connect', async () => {
-  const boot: BootNotificationRequest = {
-    chargePointVendor: 'eParking',
-    chargePointModel: 'NECU-T2',
-  };
+    const boot: BootNotificationRequest = {
+        chargingStation: {
+            model: "eParking",
+            vendorName: "NECU-T2"
+        },
+        reason: "Unknown"
+    };
 
-  try {
-    const bootResp: BootNotificationResponse = await chargingPointSimple.callRequest('BootNotification', boot);
-    if (bootResp.status === 'Accepted') {
-      console.log('Bootnotification accepted');
+    try {
+        const bootResp: BootNotificationResponse = await chargingPointSimple.callRequest('BootNotification', boot);
+        if (bootResp.status === 'Accepted') {
+            console.log('Bootnotification accepted');
+        }
+    } catch (e) {
+        if (e instanceof Error || e instanceof OcppError) {
+            console.error(e.message);
+        }
     }
-  } catch (e) {
-    if (e instanceof Error || e instanceof OcppError) {
-      console.error(e.message);
-    }
-  }
 });
 chargingPointSimple.connect('ws://localhost:9220/');
 ```
@@ -85,14 +91,14 @@ resources, we impose an additional restriction on the TLS configuration on the s
 
 ```ts
 centralSystemSimple.on('authorization', (cbId: string, req: IncomingMessage, cb: (err?: Error) => void) => {
-  console.log('authorization', cbId, req.headers.authorization);
-  // validate authorization header
-  // cb(new Error('Unathorized')); // Deny
-  cb(); // Accept
+    console.log('authorization', cbId, req.headers.authorization);
+    // validate authorization header
+    // cb(new Error('Unathorized')); // Deny
+    cb(); // Accept
 });
 centralSystemSimple.listen(9220, {
-  cert: fs.readFileSync('cert.pem'),
-  key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem'),
+    key: fs.readFileSync('key.pem'),
 });
 ```
 
@@ -100,7 +106,7 @@ If the central system requires authorization, an authorization header can be pla
 
 ```ts
 chargingPointSimple.connect('wss://eparking.fi/ocpp/', {
-  Authorization: getBasicAuth(),
+    Authorization: getBasicAuth(),
 });
 ```
 
