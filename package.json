@@ -1,5 +1,5 @@
 {
-  "name": "extrawest-ocpp-node-ts",
+  "name": "@extrawest/ocpp-node-ts",
   "version": "1.0.0",
   "description": "OCPP 2.0.1: Open Charge Point Protocol",
   "main": "dist/src/index.js",
@@ -15,7 +15,8 @@
     "typescript",
     "charging-station",
     "central-system",
-    "websocket"
+    "websocket",
+    "Extrawest"
   ],
   "author": "Extrawest",
   "license": "MIT",
