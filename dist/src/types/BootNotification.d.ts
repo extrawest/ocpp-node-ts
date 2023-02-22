@@ -7,7 +7,7 @@
  * This contains the reason for sending this message to the CSMS.
  *
  */
-export declare type BootReasonEnumType = "ApplicationReset" | "FirmwareUpdate" | "LocalReset" | "PowerUp" | "RemoteReset" | "ScheduledReset" | "Triggered" | "Unknown" | "Watchdog";
+export type BootReasonEnumType = "ApplicationReset" | "FirmwareUpdate" | "LocalReset" | "PowerUp" | "RemoteReset" | "ScheduledReset" | "Triggered" | "Unknown" | "Watchdog";
 export interface UrnOCPPCp220203BootNotificationRequest {
     customData?: CustomDataType;
     chargingStation: ChargingStationType;

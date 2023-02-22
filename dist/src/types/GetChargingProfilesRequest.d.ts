@@ -9,8 +9,8 @@
  * Defines the purpose of the schedule transferred by this profile
  *
  */
-export declare type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
-export declare type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
+export type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
+export type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
 export interface UrnOCPPCp220203GetChargingProfilesRequest {
     customData?: CustomDataType;
     /**

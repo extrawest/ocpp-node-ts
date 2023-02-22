@@ -9,7 +9,7 @@
  * Mode of energy transfer requested by the EV.
  *
  */
-export declare type EnergyTransferModeEnumType = "DC" | "AC_single_phase" | "AC_two_phase" | "AC_three_phase";
+export type EnergyTransferModeEnumType = "DC" | "AC_single_phase" | "AC_two_phase" | "AC_three_phase";
 export interface UrnOCPPCp220203NotifyEVChargingNeedsRequest {
     customData?: CustomDataType;
     /**

@@ -7,7 +7,7 @@
  * Returns whether the CSMS has been able to process the message successfully. It does not imply any approval of the charging schedule.
  *
  */
-export declare type GenericStatusEnumType = "Accepted" | "Rejected";
+export type GenericStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203NotifyEVChargingScheduleResponse {
     customData?: CustomDataType;
     status: GenericStatusEnumType;

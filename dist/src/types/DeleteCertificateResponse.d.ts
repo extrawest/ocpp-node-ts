@@ -7,7 +7,7 @@
  * Charging Station indicates if it can process the request.
  *
  */
-export declare type DeleteCertificateStatusEnumType = "Accepted" | "Failed" | "NotFound";
+export type DeleteCertificateStatusEnumType = "Accepted" | "Failed" | "NotFound";
 export interface UrnOCPPCp220203DeleteCertificateResponse {
     customData?: CustomDataType;
     status: DeleteCertificateStatusEnumType;

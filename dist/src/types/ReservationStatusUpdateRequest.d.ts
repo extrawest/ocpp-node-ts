@@ -7,7 +7,7 @@
  * The updated reservation status.
  *
  */
-export declare type ReservationUpdateStatusEnumType = "Expired" | "Removed";
+export type ReservationUpdateStatusEnumType = "Expired" | "Removed";
 export interface UrnOCPPCp220203ReservationStatusUpdateRequest {
     customData?: CustomDataType;
     /**

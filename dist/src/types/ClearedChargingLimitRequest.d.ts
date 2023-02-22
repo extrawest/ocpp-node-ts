@@ -7,7 +7,7 @@
  * Source of the charging limit.
  *
  */
-export declare type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
+export type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
 export interface UrnOCPPCp220203ClearedChargingLimitRequest {
     customData?: CustomDataType;
     chargingLimitSource: ChargingLimitSourceEnumType;

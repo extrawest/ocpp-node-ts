@@ -7,7 +7,7 @@
  * Result of operation.
  *
  */
-export declare type SetNetworkProfileStatusEnumType = "Accepted" | "Rejected" | "Failed";
+export type SetNetworkProfileStatusEnumType = "Accepted" | "Rejected" | "Failed";
 export interface UrnOCPPCp220203SetNetworkProfileResponse {
     customData?: CustomDataType;
     status: SetNetworkProfileStatusEnumType;

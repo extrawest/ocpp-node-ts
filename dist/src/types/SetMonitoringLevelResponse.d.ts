@@ -7,7 +7,7 @@
  * Indicates whether the Charging Station was able to accept the request.
  *
  */
-export declare type GenericStatusEnumType = "Accepted" | "Rejected";
+export type GenericStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203SetMonitoringLevelResponse {
     customData?: CustomDataType;
     status: GenericStatusEnumType;

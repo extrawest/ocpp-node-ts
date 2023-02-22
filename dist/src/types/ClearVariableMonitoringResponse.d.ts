@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type ClearMonitoringStatusEnumType = "Accepted" | "Rejected" | "NotFound";
+export type ClearMonitoringStatusEnumType = "Accepted" | "Rejected" | "NotFound";
 export interface UrnOCPPCp220203ClearVariableMonitoringResponse {
     customData?: CustomDataType;
     /**

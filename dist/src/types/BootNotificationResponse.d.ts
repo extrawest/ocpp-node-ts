@@ -8,7 +8,7 @@
  * within the CSMS.
  *
  */
-export declare type RegistrationStatusEnumType = "Accepted" | "Pending" | "Rejected";
+export type RegistrationStatusEnumType = "Accepted" | "Pending" | "Rejected";
 export interface UrnOCPPCp220203BootNotificationResponse {
     customData?: CustomDataType;
     /**

@@ -7,7 +7,7 @@
  * Returns whether the CSMS has been able to process the message successfully. It does not imply that the evChargingNeeds can be met with the current charging profile.
  *
  */
-export declare type NotifyEVChargingNeedsStatusEnumType = "Accepted" | "Rejected" | "Processing";
+export type NotifyEVChargingNeedsStatusEnumType = "Accepted" | "Rejected" | "Processing";
 export interface UrnOCPPCp220203NotifyEVChargingNeedsResponse {
     customData?: CustomDataType;
     status: NotifyEVChargingNeedsStatusEnumType;

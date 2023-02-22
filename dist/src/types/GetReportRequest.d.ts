@@ -3,7 +3,7 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-export declare type ComponentCriterionEnumType = "Active" | "Available" | "Enabled" | "Problem";
+export type ComponentCriterionEnumType = "Active" | "Available" | "Enabled" | "Problem";
 export interface UrnOCPPCp220203GetReportRequest {
     customData?: CustomDataType;
     /**

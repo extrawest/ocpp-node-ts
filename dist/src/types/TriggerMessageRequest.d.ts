@@ -7,7 +7,7 @@
  * Type of message to be triggered.
  *
  */
-export declare type MessageTriggerEnumType = "BootNotification" | "LogStatusNotification" | "FirmwareStatusNotification" | "Heartbeat" | "MeterValues" | "SignChargingStationCertificate" | "SignV2GCertificate" | "StatusNotification" | "TransactionEvent" | "SignCombinedCertificate" | "PublishFirmwareStatusNotification";
+export type MessageTriggerEnumType = "BootNotification" | "LogStatusNotification" | "FirmwareStatusNotification" | "Heartbeat" | "MeterValues" | "SignChargingStationCertificate" | "SignV2GCertificate" | "StatusNotification" | "TransactionEvent" | "SignCombinedCertificate" | "PublishFirmwareStatusNotification";
 export interface UrnOCPPCp220203TriggerMessageRequest {
     customData?: CustomDataType;
     evse?: EVSEType;

@@ -7,7 +7,7 @@
  * This contains the progress status of the firmware installation.
  *
  */
-export declare type FirmwareStatusEnumType = "Downloaded" | "DownloadFailed" | "Downloading" | "DownloadScheduled" | "DownloadPaused" | "Idle" | "InstallationFailed" | "Installing" | "Installed" | "InstallRebooting" | "InstallScheduled" | "InstallVerificationFailed" | "InvalidSignature" | "SignatureVerified";
+export type FirmwareStatusEnumType = "Downloaded" | "DownloadFailed" | "Downloading" | "DownloadScheduled" | "DownloadPaused" | "Idle" | "InstallationFailed" | "Installing" | "Installed" | "InstallRebooting" | "InstallScheduled" | "InstallVerificationFailed" | "InvalidSignature" | "SignatureVerified";
 export interface UrnOCPPCp220203FirmwareStatusNotificationRequest {
     customData?: CustomDataType;
     status: FirmwareStatusEnumType;

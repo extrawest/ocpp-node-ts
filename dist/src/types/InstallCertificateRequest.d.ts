@@ -7,7 +7,7 @@
  * Indicates the certificate type that is sent.
  *
  */
-export declare type InstallCertificateUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "ManufacturerRootCertificate";
+export type InstallCertificateUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "ManufacturerRootCertificate";
 export interface UrnOCPPCp220203InstallCertificateRequest {
     customData?: CustomDataType;
     certificateType: InstallCertificateUseEnumType;

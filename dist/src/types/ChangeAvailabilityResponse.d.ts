@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station is able to perform the availability change.
  *
  */
-export declare type ChangeAvailabilityStatusEnumType = "Accepted" | "Rejected" | "Scheduled";
+export type ChangeAvailabilityStatusEnumType = "Accepted" | "Rejected" | "Scheduled";
 export interface UrnOCPPCp220203ChangeAvailabilityResponse {
     customData?: CustomDataType;
     status: ChangeAvailabilityStatusEnumType;

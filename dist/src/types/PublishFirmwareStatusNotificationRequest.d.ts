@@ -8,7 +8,7 @@
  * installation.
  *
  */
-export declare type PublishFirmwareStatusEnumType = "Idle" | "DownloadScheduled" | "Downloading" | "Downloaded" | "Published" | "DownloadFailed" | "DownloadPaused" | "InvalidChecksum" | "ChecksumVerified" | "PublishFailed";
+export type PublishFirmwareStatusEnumType = "Idle" | "DownloadScheduled" | "Downloading" | "Downloaded" | "Published" | "DownloadFailed" | "DownloadPaused" | "InvalidChecksum" | "ChecksumVerified" | "PublishFailed";
 export interface UrnOCPPCp220203PublishFirmwareStatusNotificationRequest {
     customData?: CustomDataType;
     status: PublishFirmwareStatusEnumType;

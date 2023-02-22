@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type CertificateSigningUseEnumType = "ChargingStationCertificate" | "V2GCertificate";
+export type CertificateSigningUseEnumType = "ChargingStationCertificate" | "V2GCertificate";
 export interface UrnOCPPCp220203CertificateSignedRequest {
     customData?: CustomDataType;
     /**

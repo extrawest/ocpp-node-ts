@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station has successfully received and applied the update of the Local Authorization List.
  *
  */
-export declare type SendLocalListStatusEnumType = "Accepted" | "Failed" | "VersionMismatch";
+export type SendLocalListStatusEnumType = "Accepted" | "Failed" | "VersionMismatch";
 export interface UrnOCPPCp220203SendLocalListResponse {
     customData?: CustomDataType;
     status: SendLocalListStatusEnumType;

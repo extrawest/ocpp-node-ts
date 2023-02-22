@@ -7,7 +7,7 @@
  * Defines whether certificate needs to be installed or updated.
  *
  */
-export declare type CertificateActionEnumType = "Install" | "Update";
+export type CertificateActionEnumType = "Install" | "Update";
 export interface UrnOCPPCp220203Get15118EVCertificateRequest {
     customData?: CustomDataType;
     /**

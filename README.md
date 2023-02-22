@@ -61,8 +61,8 @@ chargingPointSimple.on('close', () => {
 chargingPointSimple.on('connect', async () => {
     const boot: BootNotificationRequest = {
         chargingStation: {
-            model: "eParking",
-            vendorName: "NECU-T2"
+            model: "someModel",
+            vendorName: "someVendor"
         },
         reason: "Unknown"
     };
@@ -106,7 +106,7 @@ centralSystemSimple.listen(9220, {
 If the central system requires authorization, an authorization header can be placed as the second parameter.
 
 ```ts
-chargingPointSimple.connect('wss://eparking.fi/ocpp/', {
+chargingPointSimple.connect('wss://somecs.com/ocpp/', {
     Authorization: getBasicAuth(),
 });
 ```

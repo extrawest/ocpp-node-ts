@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type ChargingRateUnitEnumType = "W" | "A";
+export type ChargingRateUnitEnumType = "W" | "A";
 export interface UrnOCPPCp220203GetCompositeScheduleRequest {
     customData?: CustomDataType;
     /**

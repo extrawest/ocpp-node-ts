@@ -7,7 +7,7 @@
  * Indicates whether the request was accepted.
  *
  */
-export declare type GenericStatusEnumType = "Accepted" | "Rejected";
+export type GenericStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203PublishFirmwareResponse {
     customData?: CustomDataType;
     status: GenericStatusEnumType;

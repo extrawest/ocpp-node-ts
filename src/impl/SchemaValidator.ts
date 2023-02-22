@@ -1,4 +1,5 @@
 import Ajv from 'ajv';
+import addFormats from "ajv-formats"
 import {
   ERROR_FORMATIONVIOLATION,
   ERROR_PROPERTYCONSTRAINTVIOLATION,
@@ -22,7 +23,8 @@ export class SchemaValidator {
     if (!this.schema) {
       throw new OcppError(ERROR_PROTOCOLERROR, 'Schema for request not found');
     }
-    const ajv = new Ajv();
+    const ajv = new Ajv({strict:false});
+    addFormats(ajv);
     // delete schema.$schema;
     const validate = ajv.compile(this.schema);
     const valid = validate(payload);

@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type UpdateFirmwareStatusEnumType = "Accepted" | "Rejected" | "AcceptedCanceled" | "InvalidCertificate" | "RevokedCertificate";
+export type UpdateFirmwareStatusEnumType = "Accepted" | "Rejected" | "AcceptedCanceled" | "InvalidCertificate" | "RevokedCertificate";
 export interface UrnOCPPCp220203UpdateFirmwareResponse {
     customData?: CustomDataType;
     status: UpdateFirmwareStatusEnumType;

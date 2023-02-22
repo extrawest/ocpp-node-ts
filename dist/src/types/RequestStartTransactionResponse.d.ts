@@ -7,7 +7,7 @@
  * Status indicating whether the Charging Station accepts the request to start a transaction.
  *
  */
-export declare type RequestStartStopStatusEnumType = "Accepted" | "Rejected";
+export type RequestStartStopStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203RequestStartTransactionResponse {
     customData?: CustomDataType;
     status: RequestStartStopStatusEnumType;

@@ -8,7 +8,7 @@
  * should send.
  *
  */
-export declare type LogEnumType = "DiagnosticsLog" | "SecurityLog";
+export type LogEnumType = "DiagnosticsLog" | "SecurityLog";
 export interface UrnOCPPCp220203GetLogRequest {
     customData?: CustomDataType;
     log: LogParametersType;

@@ -7,7 +7,7 @@
  * Specifies whether the CSMS can process the request.
  *
  */
-export declare type GenericStatusEnumType = "Accepted" | "Rejected";
+export type GenericStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203SignCertificateResponse {
     customData?: CustomDataType;
     status: GenericStatusEnumType;

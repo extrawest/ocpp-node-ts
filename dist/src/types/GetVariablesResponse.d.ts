@@ -8,12 +8,12 @@
  *
  *
  */
-export declare type GetVariableStatusEnumType = "Accepted" | "Rejected" | "UnknownComponent" | "UnknownVariable" | "NotSupportedAttributeType";
+export type GetVariableStatusEnumType = "Accepted" | "Rejected" | "UnknownComponent" | "UnknownVariable" | "NotSupportedAttributeType";
 /**
  * Attribute type for which value is requested. When absent, default Actual is assumed.
  *
  */
-export declare type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
+export type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
 export interface UrnOCPPCp220203GetVariablesResponse {
     customData?: CustomDataType;
     /**

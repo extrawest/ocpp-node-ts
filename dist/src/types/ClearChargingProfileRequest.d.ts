@@ -9,7 +9,7 @@
  * Specifies to purpose of the charging profiles that will be cleared, if they meet the other criteria in the request.
  *
  */
-export declare type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
+export type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
 export interface UrnOCPPCp220203ClearChargingProfileRequest {
     customData?: CustomDataType;
     /**

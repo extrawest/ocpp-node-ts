@@ -7,7 +7,7 @@
  * Accepted if the Charging Station has executed the request, otherwise rejected.
  *
  */
-export declare type ClearCacheStatusEnumType = "Accepted" | "Rejected";
+export type ClearCacheStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203ClearCacheResponse {
     customData?: CustomDataType;
     status: ClearCacheStatusEnumType;

@@ -7,7 +7,7 @@
  * Indicates if the Charging Station was able to execute the request.
  *
  */
-export declare type ClearChargingProfileStatusEnumType = "Accepted" | "Unknown";
+export type ClearChargingProfileStatusEnumType = "Accepted" | "Unknown";
 export interface UrnOCPPCp220203ClearChargingProfileResponse {
     customData?: CustomDataType;
     status: ClearChargingProfileStatusEnumType;

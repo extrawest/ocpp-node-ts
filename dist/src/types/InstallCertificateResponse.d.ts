@@ -7,7 +7,7 @@
  * Charging Station indicates if installation was successful.
  *
  */
-export declare type InstallCertificateStatusEnumType = "Accepted" | "Rejected" | "Failed";
+export type InstallCertificateStatusEnumType = "Accepted" | "Rejected" | "Failed";
 export interface UrnOCPPCp220203InstallCertificateResponse {
     customData?: CustomDataType;
     status: InstallCertificateStatusEnumType;

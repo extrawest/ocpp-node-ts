@@ -8,17 +8,17 @@
  * Defaults to Actual if absent.
  *
  */
-export declare type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
+export type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
 /**
  * Defines the mutability of this attribute. Default is ReadWrite when omitted.
  *
  */
-export declare type MutabilityEnumType = "ReadOnly" | "WriteOnly" | "ReadWrite";
+export type MutabilityEnumType = "ReadOnly" | "WriteOnly" | "ReadWrite";
 /**
  * Data type of this variable.
  *
  */
-export declare type DataEnumType = "string" | "decimal" | "integer" | "dateTime" | "boolean" | "OptionList" | "SequenceList" | "MemberList";
+export type DataEnumType = "string" | "decimal" | "integer" | "dateTime" | "boolean" | "OptionList" | "SequenceList" | "MemberList";
 export interface UrnOCPPCp220203NotifyReportRequest {
     customData?: CustomDataType;
     /**

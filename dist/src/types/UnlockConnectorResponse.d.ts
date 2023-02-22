@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station has unlocked the connector.
  *
  */
-export declare type UnlockStatusEnumType = "Unlocked" | "UnlockFailed" | "OngoingAuthorizedTransaction" | "UnknownConnector";
+export type UnlockStatusEnumType = "Unlocked" | "UnlockFailed" | "OngoingAuthorizedTransaction" | "UnknownConnector";
 export interface UrnOCPPCp220203UnlockConnectorResponse {
     customData?: CustomDataType;
     status: UnlockStatusEnumType;

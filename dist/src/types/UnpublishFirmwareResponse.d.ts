@@ -7,7 +7,7 @@
  * Indicates whether the Local Controller succeeded in unpublishing the firmware.
  *
  */
-export declare type UnpublishFirmwareStatusEnumType = "DownloadOngoing" | "NoFirmware" | "Unpublished";
+export type UnpublishFirmwareStatusEnumType = "DownloadOngoing" | "NoFirmware" | "Unpublished";
 export interface UrnOCPPCp220203UnpublishFirmwareResponse {
     customData?: CustomDataType;
     status: UnpublishFirmwareStatusEnumType;

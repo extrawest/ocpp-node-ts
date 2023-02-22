@@ -9,26 +9,26 @@
  * Current status of the ID Token.
  *
  */
-export declare type AuthorizationStatusEnumType = "Accepted" | "Blocked" | "ConcurrentTx" | "Expired" | "Invalid" | "NoCredit" | "NotAllowedTypeEVSE" | "NotAtThisLocation" | "NotAtThisTime" | "Unknown";
+export type AuthorizationStatusEnumType = "Accepted" | "Blocked" | "ConcurrentTx" | "Expired" | "Invalid" | "NoCredit" | "NotAllowedTypeEVSE" | "NotAtThisLocation" | "NotAtThisTime" | "Unknown";
 /**
  * Enumeration of possible idToken types.
  *
  */
-export declare type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
+export type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
 /**
  * Message_ Content. Format. Message_ Format_ Code
  * urn:x-enexis:ecdm:uid:1:570848
  * Format of the message.
  *
  */
-export declare type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
+export type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
 /**
  * Certificate status information.
  * - if all certificates are valid: return 'Accepted'.
  * - if one of the certificates was revoked, return 'CertificateRevoked'.
  *
  */
-export declare type AuthorizeCertificateStatusEnumType = "Accepted" | "SignatureError" | "CertificateExpired" | "CertificateRevoked" | "NoCertificateAvailable" | "CertChainError" | "ContractCancelled";
+export type AuthorizeCertificateStatusEnumType = "Accepted" | "SignatureError" | "CertificateExpired" | "CertificateRevoked" | "NoCertificateAvailable" | "CertChainError" | "ContractCancelled";
 export interface UrnOCPPCp220203AuthorizeResponse {
     customData?: CustomDataType;
     idTokenInfo: IdTokenInfoType;

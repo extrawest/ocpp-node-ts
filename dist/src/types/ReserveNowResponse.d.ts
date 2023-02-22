@@ -7,7 +7,7 @@
  * This indicates the success or failure of the reservation.
  *
  */
-export declare type ReserveNowStatusEnumType = "Accepted" | "Faulted" | "Occupied" | "Rejected" | "Unavailable";
+export type ReserveNowStatusEnumType = "Accepted" | "Faulted" | "Occupied" | "Rejected" | "Unavailable";
 export interface UrnOCPPCp220203ReserveNowResponse {
     customData?: CustomDataType;
     status: ReserveNowStatusEnumType;

@@ -7,12 +7,12 @@
  * This field specifies the connector type.
  *
  */
-export declare type ConnectorEnumType = "cCCS1" | "cCCS2" | "cG105" | "cTesla" | "cType1" | "cType2" | "s309-1P-16A" | "s309-1P-32A" | "s309-3P-16A" | "s309-3P-32A" | "sBS1361" | "sCEE-7-7" | "sType2" | "sType3" | "Other1PhMax16A" | "Other1PhOver16A" | "Other3Ph" | "Pan" | "wInductive" | "wResonant" | "Undetermined" | "Unknown";
+export type ConnectorEnumType = "cCCS1" | "cCCS2" | "cG105" | "cTesla" | "cType1" | "cType2" | "s309-1P-16A" | "s309-1P-32A" | "s309-3P-16A" | "s309-3P-32A" | "sBS1361" | "sCEE-7-7" | "sType2" | "sType3" | "Other1PhMax16A" | "Other1PhOver16A" | "Other3Ph" | "Pan" | "wInductive" | "wResonant" | "Undetermined" | "Unknown";
 /**
  * Enumeration of possible idToken types.
  *
  */
-export declare type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
+export type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
 export interface UrnOCPPCp220203ReserveNowRequest {
     customData?: CustomDataType;
     /**

@@ -7,7 +7,7 @@
  * This indicates the success or failure of the canceling of a reservation by CSMS.
  *
  */
-export declare type CancelReservationStatusEnumType = "Accepted" | "Rejected";
+export type CancelReservationStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203CancelReservationResponse {
     customData?: CustomDataType;
     status: CancelReservationStatusEnumType;

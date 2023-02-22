@@ -7,7 +7,7 @@
  * Indicates if the Charging Station has Display Messages that match the request criteria in the &lt;&lt;getdisplaymessagesrequest,GetDisplayMessagesRequest&gt;&gt;
  *
  */
-export declare type GetDisplayMessagesStatusEnumType = "Accepted" | "Unknown";
+export type GetDisplayMessagesStatusEnumType = "Accepted" | "Unknown";
 export interface UrnOCPPCp220203GetDisplayMessagesResponse {
     customData?: CustomDataType;
     status: GetDisplayMessagesStatusEnumType;

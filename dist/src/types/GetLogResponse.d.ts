@@ -7,7 +7,7 @@
  * This field indicates whether the Charging Station was able to accept the request.
  *
  */
-export declare type LogStatusEnumType = "Accepted" | "Rejected" | "AcceptedCanceled";
+export type LogStatusEnumType = "Accepted" | "Rejected" | "AcceptedCanceled";
 export interface UrnOCPPCp220203GetLogResponse {
     customData?: CustomDataType;
     status: LogStatusEnumType;

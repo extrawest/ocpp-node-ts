@@ -7,7 +7,7 @@
  * This contains the type of reset that the Charging Station or EVSE should perform.
  *
  */
-export declare type ResetEnumType = "Immediate" | "OnIdle";
+export type ResetEnumType = "Immediate" | "OnIdle";
 export interface UrnOCPPCp220203ResetRequest {
     customData?: CustomDataType;
     type: ResetEnumType;

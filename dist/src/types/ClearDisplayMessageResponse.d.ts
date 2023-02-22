@@ -7,7 +7,7 @@
  * Returns whether the Charging Station has been able to remove the message.
  *
  */
-export declare type ClearMessageStatusEnumType = "Accepted" | "Unknown";
+export type ClearMessageStatusEnumType = "Accepted" | "Unknown";
 export interface UrnOCPPCp220203ClearDisplayMessageResponse {
     customData?: CustomDataType;
     status: ClearMessageStatusEnumType;
