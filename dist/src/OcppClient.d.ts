@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import { OutgoingHttpHeaders } from 'http';
 import { UrnOCPPCp220203AuthorizeRequest } from './types/AuthorizeRequest';
 import { UrnOCPPCp220203AuthorizeResponse } from './types/AuthorizeResponse';

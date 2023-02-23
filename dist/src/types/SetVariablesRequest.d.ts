@@ -7,7 +7,7 @@
  * Type of attribute: Actual, Target, MinSet, MaxSet. Default is Actual when omitted.
  *
  */
-export declare type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
+export type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
 export interface UrnOCPPCp220203SetVariablesRequest {
     customData?: CustomDataType;
     /**

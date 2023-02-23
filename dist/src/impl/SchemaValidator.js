@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SchemaValidator = void 0;
 var ajv_1 = __importDefault(require("ajv"));
+var ajv_formats_1 = __importDefault(require("ajv-formats"));
 var OcppError_1 = require("./OcppError");
 var SchemaValidator = /** @class */ (function () {
     function SchemaValidator(schema) {
@@ -19,7 +20,8 @@ var SchemaValidator = /** @class */ (function () {
         if (!this.schema) {
             throw new OcppError_1.OcppError(OcppError_1.ERROR_PROTOCOLERROR, 'Schema for request not found');
         }
-        var ajv = new ajv_1.default();
+        var ajv = new ajv_1.default({ strict: false });
+        (0, ajv_formats_1.default)(ajv);
         // delete schema.$schema;
         var validate = ajv.compile(this.schema);
         var valid = validate(payload);

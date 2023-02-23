@@ -7,7 +7,7 @@
  * This field specifies the report base.
  *
  */
-export declare type ReportBaseEnumType = "ConfigurationInventory" | "FullInventory" | "SummaryInventory";
+export type ReportBaseEnumType = "ConfigurationInventory" | "FullInventory" | "SummaryInventory";
 export interface UrnOCPPCp220203GetBaseReportRequest {
     customData?: CustomDataType;
     /**

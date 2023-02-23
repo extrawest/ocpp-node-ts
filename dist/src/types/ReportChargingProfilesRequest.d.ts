@@ -7,42 +7,42 @@
  * Source that has installed this charging profile.
  *
  */
-export declare type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
+export type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
 /**
  * Charging_ Profile. Charging_ Profile_ Purpose. Charging_ Profile_ Purpose_ Code
  * urn:x-oca:ocpp:uid:1:569231
  * Defines the purpose of the schedule transferred by this profile
  *
  */
-export declare type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
+export type ChargingProfilePurposeEnumType = "ChargingStationExternalConstraints" | "ChargingStationMaxProfile" | "TxDefaultProfile" | "TxProfile";
 /**
  * Charging_ Profile. Charging_ Profile_ Kind. Charging_ Profile_ Kind_ Code
  * urn:x-oca:ocpp:uid:1:569232
  * Indicates the kind of schedule.
  *
  */
-export declare type ChargingProfileKindEnumType = "Absolute" | "Recurring" | "Relative";
+export type ChargingProfileKindEnumType = "Absolute" | "Recurring" | "Relative";
 /**
  * Charging_ Profile. Recurrency_ Kind. Recurrency_ Kind_ Code
  * urn:x-oca:ocpp:uid:1:569233
  * Indicates the start point of a recurrence.
  *
  */
-export declare type RecurrencyKindEnumType = "Daily" | "Weekly";
+export type RecurrencyKindEnumType = "Daily" | "Weekly";
 /**
  * Charging_ Schedule. Charging_ Rate_ Unit. Charging_ Rate_ Unit_ Code
  * urn:x-oca:ocpp:uid:1:569238
  * The unit of measure Limit is expressed in.
  *
  */
-export declare type ChargingRateUnitEnumType = "W" | "A";
+export type ChargingRateUnitEnumType = "W" | "A";
 /**
  * Cost. Cost_ Kind. Cost_ Kind_ Code
  * urn:x-oca:ocpp:uid:1:569243
  * The kind of cost referred to in the message element amount
  *
  */
-export declare type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
+export type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
 export interface UrnOCPPCp220203ReportChargingProfilesRequest {
     customData?: CustomDataType;
     /**

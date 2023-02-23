@@ -8,28 +8,28 @@
  * The first TransactionEvent of a transaction SHALL contain: "Started" The last TransactionEvent of a transaction SHALL contain: "Ended" All others SHALL contain: "Updated"
  *
  */
-export declare type TransactionEventEnumType = "Ended" | "Started" | "Updated";
+export type TransactionEventEnumType = "Ended" | "Started" | "Updated";
 /**
  * Sampled_ Value. Context. Reading_ Context_ Code
  * urn:x-oca:ocpp:uid:1:569261
  * Type of detail value: start, end or sample. Default = "Sample.Periodic"
  *
  */
-export declare type ReadingContextEnumType = "Interruption.Begin" | "Interruption.End" | "Other" | "Sample.Clock" | "Sample.Periodic" | "Transaction.Begin" | "Transaction.End" | "Trigger";
+export type ReadingContextEnumType = "Interruption.Begin" | "Interruption.End" | "Other" | "Sample.Clock" | "Sample.Periodic" | "Transaction.Begin" | "Transaction.End" | "Trigger";
 /**
  * Sampled_ Value. Measurand. Measurand_ Code
  * urn:x-oca:ocpp:uid:1:569263
  * Type of measurement. Default = "Energy.Active.Import.Register"
  *
  */
-export declare type MeasurandEnumType = "Current.Export" | "Current.Import" | "Current.Offered" | "Energy.Active.Export.Register" | "Energy.Active.Import.Register" | "Energy.Reactive.Export.Register" | "Energy.Reactive.Import.Register" | "Energy.Active.Export.Interval" | "Energy.Active.Import.Interval" | "Energy.Active.Net" | "Energy.Reactive.Export.Interval" | "Energy.Reactive.Import.Interval" | "Energy.Reactive.Net" | "Energy.Apparent.Net" | "Energy.Apparent.Import" | "Energy.Apparent.Export" | "Frequency" | "Power.Active.Export" | "Power.Active.Import" | "Power.Factor" | "Power.Offered" | "Power.Reactive.Export" | "Power.Reactive.Import" | "SoC" | "Voltage";
+export type MeasurandEnumType = "Current.Export" | "Current.Import" | "Current.Offered" | "Energy.Active.Export.Register" | "Energy.Active.Import.Register" | "Energy.Reactive.Export.Register" | "Energy.Reactive.Import.Register" | "Energy.Active.Export.Interval" | "Energy.Active.Import.Interval" | "Energy.Active.Net" | "Energy.Reactive.Export.Interval" | "Energy.Reactive.Import.Interval" | "Energy.Reactive.Net" | "Energy.Apparent.Net" | "Energy.Apparent.Import" | "Energy.Apparent.Export" | "Frequency" | "Power.Active.Export" | "Power.Active.Import" | "Power.Factor" | "Power.Offered" | "Power.Reactive.Export" | "Power.Reactive.Import" | "SoC" | "Voltage";
 /**
  * Sampled_ Value. Phase. Phase_ Code
  * urn:x-oca:ocpp:uid:1:569264
  * Indicates how the measured value is to be interpreted. For instance between L1 and neutral (L1-N) Please note that not all values of phase are applicable to all Measurands. When phase is absent, the measured value is interpreted as an overall value.
  *
  */
-export declare type PhaseEnumType = "L1" | "L2" | "L3" | "N" | "L1-N" | "L2-N" | "L3-N" | "L1-L2" | "L2-L3" | "L3-L1";
+export type PhaseEnumType = "L1" | "L2" | "L3" | "N" | "L1-N" | "L2-N" | "L3-N" | "L1-L2" | "L2-L3" | "L3-L1";
 /**
  * Sampled_ Value. Location. Location_ Code
  * urn:x-oca:ocpp:uid:1:569265
@@ -37,12 +37,12 @@ export declare type PhaseEnumType = "L1" | "L2" | "L3" | "N" | "L1-N" | "L2-N" |
  *
  *
  */
-export declare type LocationEnumType = "Body" | "Cable" | "EV" | "Inlet" | "Outlet";
+export type LocationEnumType = "Body" | "Cable" | "EV" | "Inlet" | "Outlet";
 /**
  * Reason the Charging Station sends this message to the CSMS
  *
  */
-export declare type TriggerReasonEnumType = "Authorized" | "CablePluggedIn" | "ChargingRateChanged" | "ChargingStateChanged" | "Deauthorized" | "EnergyLimitReached" | "EVCommunicationLost" | "EVConnectTimeout" | "MeterValueClock" | "MeterValuePeriodic" | "TimeLimitReached" | "Trigger" | "UnlockCommand" | "StopAuthorized" | "EVDeparted" | "EVDetected" | "RemoteStop" | "RemoteStart" | "AbnormalCondition" | "SignedDataReceived" | "ResetCommand";
+export type TriggerReasonEnumType = "Authorized" | "CablePluggedIn" | "ChargingRateChanged" | "ChargingStateChanged" | "Deauthorized" | "EnergyLimitReached" | "EVCommunicationLost" | "EVConnectTimeout" | "MeterValueClock" | "MeterValuePeriodic" | "TimeLimitReached" | "Trigger" | "UnlockCommand" | "StopAuthorized" | "EVDeparted" | "EVDetected" | "RemoteStop" | "RemoteStart" | "AbnormalCondition" | "SignedDataReceived" | "ResetCommand";
 /**
  * Transaction. State. Transaction_ State_ Code
  * urn:x-oca:ocpp:uid:1:569419
@@ -50,19 +50,19 @@ export declare type TriggerReasonEnumType = "Authorized" | "CablePluggedIn" | "C
  * has changed.
  *
  */
-export declare type ChargingStateEnumType = "Charging" | "EVConnected" | "SuspendedEV" | "SuspendedEVSE" | "Idle";
+export type ChargingStateEnumType = "Charging" | "EVConnected" | "SuspendedEV" | "SuspendedEVSE" | "Idle";
 /**
  * Transaction. Stopped_ Reason. EOT_ Reason_ Code
  * urn:x-oca:ocpp:uid:1:569413
  * This contains the reason why the transaction was stopped. MAY only be omitted when Reason is "Local".
  *
  */
-export declare type ReasonEnumType = "DeAuthorized" | "EmergencyStop" | "EnergyLimitReached" | "EVDisconnected" | "GroundFault" | "ImmediateReset" | "Local" | "LocalOutOfCredit" | "MasterPass" | "Other" | "OvercurrentFault" | "PowerLoss" | "PowerQuality" | "Reboot" | "Remote" | "SOCLimitReached" | "StoppedByEV" | "TimeLimitReached" | "Timeout";
+export type ReasonEnumType = "DeAuthorized" | "EmergencyStop" | "EnergyLimitReached" | "EVDisconnected" | "GroundFault" | "ImmediateReset" | "Local" | "LocalOutOfCredit" | "MasterPass" | "Other" | "OvercurrentFault" | "PowerLoss" | "PowerQuality" | "Reboot" | "Remote" | "SOCLimitReached" | "StoppedByEV" | "TimeLimitReached" | "Timeout";
 /**
  * Enumeration of possible idToken types.
  *
  */
-export declare type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
+export type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
 export interface UrnOCPPCp220203TransactionEventRequest {
     customData?: CustomDataType;
     eventType: TransactionEventEnumType;

@@ -8,13 +8,13 @@
  * able to process the request
  *
  */
-export declare type GenericStatusEnumType = "Accepted" | "Rejected";
+export type GenericStatusEnumType = "Accepted" | "Rejected";
 /**
  * The unit of measure Limit is
  * expressed in.
  *
  */
-export declare type ChargingRateUnitEnumType = "W" | "A";
+export type ChargingRateUnitEnumType = "W" | "A";
 export interface UrnOCPPCp220203GetCompositeScheduleResponse {
     customData?: CustomDataType;
     status: GenericStatusEnumType;

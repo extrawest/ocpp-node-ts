@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station is able to process this request and will send &lt;&lt;reportchargingprofilesrequest, ReportChargingProfilesRequest&gt;&gt; messages.
  *
  */
-export declare type GetChargingProfileStatusEnumType = "Accepted" | "NoProfiles";
+export type GetChargingProfileStatusEnumType = "Accepted" | "NoProfiles";
 export interface UrnOCPPCp220203GetChargingProfilesResponse {
     customData?: CustomDataType;
     status: GetChargingProfileStatusEnumType;

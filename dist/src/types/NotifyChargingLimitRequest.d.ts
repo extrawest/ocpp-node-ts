@@ -9,21 +9,21 @@
  * The unit of measure Limit is expressed in.
  *
  */
-export declare type ChargingRateUnitEnumType = "W" | "A";
+export type ChargingRateUnitEnumType = "W" | "A";
 /**
  * Cost. Cost_ Kind. Cost_ Kind_ Code
  * urn:x-oca:ocpp:uid:1:569243
  * The kind of cost referred to in the message element amount
  *
  */
-export declare type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
+export type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
 /**
  * Charging_ Limit. Charging_ Limit_ Source. Charging_ Limit_ Source_ Code
  * urn:x-enexis:ecdm:uid:1:570845
  * Represents the source of the charging limit.
  *
  */
-export declare type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
+export type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
 export interface UrnOCPPCp220203NotifyChargingLimitRequest {
     customData?: CustomDataType;
     /**

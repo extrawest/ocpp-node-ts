@@ -7,7 +7,7 @@
  * This indicates whether the charging station was able to retrieve the OCSP certificate status.
  *
  */
-export declare type GetCertificateStatusEnumType = "Accepted" | "Failed";
+export type GetCertificateStatusEnumType = "Accepted" | "Failed";
 export interface UrnOCPPCp220203GetCertificateStatusResponse {
     customData?: CustomDataType;
     status: GetCertificateStatusEnumType;

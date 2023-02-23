@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type OperationalStatusEnumType = "Inoperative" | "Operative";
+export type OperationalStatusEnumType = "Inoperative" | "Operative";
 export interface UrnOCPPCp220203ChangeAvailabilityRequest {
     customData?: CustomDataType;
     evse?: EVSEType;

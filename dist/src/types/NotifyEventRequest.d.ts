@@ -8,13 +8,13 @@
  *
  *
  */
-export declare type EventTriggerEnumType = "Alerting" | "Delta" | "Periodic";
+export type EventTriggerEnumType = "Alerting" | "Delta" | "Periodic";
 /**
  * Specifies the event notification type of the message.
  *
  *
  */
-export declare type EventNotificationEnumType = "HardWiredNotification" | "HardWiredMonitor" | "PreconfiguredMonitor" | "CustomMonitor";
+export type EventNotificationEnumType = "HardWiredNotification" | "HardWiredMonitor" | "PreconfiguredMonitor" | "CustomMonitor";
 export interface UrnOCPPCp220203NotifyEventRequest {
     customData?: CustomDataType;
     /**

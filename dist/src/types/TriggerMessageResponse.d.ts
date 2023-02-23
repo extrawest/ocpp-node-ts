@@ -7,7 +7,7 @@
  * Indicates whether the Charging Station will send the requested notification or not.
  *
  */
-export declare type TriggerMessageStatusEnumType = "Accepted" | "Rejected" | "NotImplemented";
+export type TriggerMessageStatusEnumType = "Accepted" | "Rejected" | "NotImplemented";
 export interface UrnOCPPCp220203TriggerMessageResponse {
     customData?: CustomDataType;
     status: TriggerMessageStatusEnumType;

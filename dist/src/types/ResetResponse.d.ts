@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station is able to perform the reset.
  *
  */
-export declare type ResetStatusEnumType = "Accepted" | "Rejected" | "Scheduled";
+export type ResetStatusEnumType = "Accepted" | "Rejected" | "Scheduled";
 export interface UrnOCPPCp220203ResetResponse {
     customData?: CustomDataType;
     status: ResetStatusEnumType;

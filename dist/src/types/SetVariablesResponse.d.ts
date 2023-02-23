@@ -7,12 +7,12 @@
  * Type of attribute: Actual, Target, MinSet, MaxSet. Default is Actual when omitted.
  *
  */
-export declare type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
+export type AttributeEnumType = "Actual" | "Target" | "MinSet" | "MaxSet";
 /**
  * Result status of setting the variable.
  *
  */
-export declare type SetVariableStatusEnumType = "Accepted" | "Rejected" | "UnknownComponent" | "UnknownVariable" | "NotSupportedAttributeType" | "RebootRequired";
+export type SetVariableStatusEnumType = "Accepted" | "Rejected" | "UnknownComponent" | "UnknownVariable" | "NotSupportedAttributeType" | "RebootRequired";
 export interface UrnOCPPCp220203SetVariablesResponse {
     customData?: CustomDataType;
     /**

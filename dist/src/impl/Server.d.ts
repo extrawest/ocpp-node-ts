@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import EventEmitter from 'events';
 import { SecureContextOptions } from 'tls';
 export declare class Server extends EventEmitter {

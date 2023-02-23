@@ -7,12 +7,12 @@
  * Used algorithms for the hashes provided.
  *
  */
-export declare type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
+export type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
 /**
  * Enumeration of possible idToken types.
  *
  */
-export declare type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
+export type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
 export interface UrnOCPPCp220203CustomerInformationRequest {
     customData?: CustomDataType;
     customerCertificate?: CertificateHashDataType;

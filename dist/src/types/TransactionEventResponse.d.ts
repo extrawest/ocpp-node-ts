@@ -9,19 +9,19 @@
  * Current status of the ID Token.
  *
  */
-export declare type AuthorizationStatusEnumType = "Accepted" | "Blocked" | "ConcurrentTx" | "Expired" | "Invalid" | "NoCredit" | "NotAllowedTypeEVSE" | "NotAtThisLocation" | "NotAtThisTime" | "Unknown";
+export type AuthorizationStatusEnumType = "Accepted" | "Blocked" | "ConcurrentTx" | "Expired" | "Invalid" | "NoCredit" | "NotAllowedTypeEVSE" | "NotAtThisLocation" | "NotAtThisTime" | "Unknown";
 /**
  * Enumeration of possible idToken types.
  *
  */
-export declare type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
+export type IdTokenEnumType = "Central" | "eMAID" | "ISO14443" | "ISO15693" | "KeyCode" | "Local" | "MacAddress" | "NoAuthorization";
 /**
  * Message_ Content. Format. Message_ Format_ Code
  * urn:x-enexis:ecdm:uid:1:570848
  * Format of the message.
  *
  */
-export declare type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
+export type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
 export interface UrnOCPPCp220203TransactionEventResponse {
     customData?: CustomDataType;
     /**

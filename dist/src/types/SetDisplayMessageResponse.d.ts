@@ -7,7 +7,7 @@
  * This indicates whether the Charging Station is able to display the message.
  *
  */
-export declare type DisplayMessageStatusEnumType = "Accepted" | "NotSupportedMessageFormat" | "Rejected" | "NotSupportedPriority" | "NotSupportedState" | "UnknownTransaction";
+export type DisplayMessageStatusEnumType = "Accepted" | "NotSupportedMessageFormat" | "Rejected" | "NotSupportedPriority" | "NotSupportedState" | "UnknownTransaction";
 export interface UrnOCPPCp220203SetDisplayMessageResponse {
     customData?: CustomDataType;
     status: DisplayMessageStatusEnumType;

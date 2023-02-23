@@ -7,7 +7,7 @@
  * Indicates whether the request was accepted.
  *
  */
-export declare type CustomerInformationStatusEnumType = "Accepted" | "Rejected" | "Invalid";
+export type CustomerInformationStatusEnumType = "Accepted" | "Rejected" | "Invalid";
 export interface UrnOCPPCp220203CustomerInformationResponse {
     customData?: CustomDataType;
     status: CustomerInformationStatusEnumType;

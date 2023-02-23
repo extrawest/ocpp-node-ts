@@ -9,33 +9,33 @@
  * Authentication method.
  *
  */
-export declare type APNAuthenticationEnumType = "CHAP" | "NONE" | "PAP" | "AUTO";
+export type APNAuthenticationEnumType = "CHAP" | "NONE" | "PAP" | "AUTO";
 /**
  * Communication_ Function. OCPP_ Version. OCPP_ Version_ Code
  * urn:x-oca:ocpp:uid:1:569355
  * Defines the OCPP version used for this communication function.
  *
  */
-export declare type OCPPVersionEnumType = "OCPP12" | "OCPP15" | "OCPP16" | "OCPP20";
+export type OCPPVersionEnumType = "OCPP12" | "OCPP15" | "OCPP16" | "OCPP20";
 /**
  * Communication_ Function. OCPP_ Transport. OCPP_ Transport_ Code
  * urn:x-oca:ocpp:uid:1:569356
  * Defines the transport protocol (e.g. SOAP or JSON). Note: SOAP is not supported in OCPP 2.0, but is supported by other versions of OCPP.
  *
  */
-export declare type OCPPTransportEnumType = "JSON" | "SOAP";
+export type OCPPTransportEnumType = "JSON" | "SOAP";
 /**
  * Applicable Network Interface.
  *
  */
-export declare type OCPPInterfaceEnumType = "Wired0" | "Wired1" | "Wired2" | "Wired3" | "Wireless0" | "Wireless1" | "Wireless2" | "Wireless3";
+export type OCPPInterfaceEnumType = "Wired0" | "Wired1" | "Wired2" | "Wired3" | "Wireless0" | "Wireless1" | "Wireless2" | "Wireless3";
 /**
  * VPN. Type. VPN_ Code
  * urn:x-oca:ocpp:uid:1:569277
  * Type of VPN
  *
  */
-export declare type VPNEnumType = "IKEv2" | "IPSec" | "L2TP" | "PPTP";
+export type VPNEnumType = "IKEv2" | "IPSec" | "L2TP" | "PPTP";
 export interface UrnOCPPCp220203SetNetworkProfileRequest {
     customData?: CustomDataType;
     /**

@@ -3,7 +3,7 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-export declare type GetCertificateIdUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "V2GCertificateChain" | "ManufacturerRootCertificate";
+export type GetCertificateIdUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "V2GCertificateChain" | "ManufacturerRootCertificate";
 export interface UrnOCPPCp220203GetInstalledCertificateIdsRequest {
     customData?: CustomDataType;
     /**

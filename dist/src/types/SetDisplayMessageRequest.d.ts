@@ -9,21 +9,21 @@
  * With what priority should this message be shown
  *
  */
-export declare type MessagePriorityEnumType = "AlwaysFront" | "InFront" | "NormalCycle";
+export type MessagePriorityEnumType = "AlwaysFront" | "InFront" | "NormalCycle";
 /**
  * Message_ Info. State. Message_ State_ Code
  * urn:x-enexis:ecdm:uid:1:569254
  * During what state should this message be shown. When omitted this message should be shown in any state of the Charging Station.
  *
  */
-export declare type MessageStateEnumType = "Charging" | "Faulted" | "Idle" | "Unavailable";
+export type MessageStateEnumType = "Charging" | "Faulted" | "Idle" | "Unavailable";
 /**
  * Message_ Content. Format. Message_ Format_ Code
  * urn:x-enexis:ecdm:uid:1:570848
  * Format of the message.
  *
  */
-export declare type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
+export type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
 export interface UrnOCPPCp220203SetDisplayMessageRequest {
     customData?: CustomDataType;
     message: MessageInfoType;

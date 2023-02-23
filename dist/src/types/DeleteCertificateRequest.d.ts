@@ -7,7 +7,7 @@
  * Used algorithms for the hashes provided.
  *
  */
-export declare type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
+export type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
 export interface UrnOCPPCp220203DeleteCertificateRequest {
     customData?: CustomDataType;
     certificateHashData: CertificateHashDataType;

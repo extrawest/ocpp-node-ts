@@ -7,7 +7,7 @@
  * This contains the current status of the Connector.
  *
  */
-export declare type ConnectorStatusEnumType = "Available" | "Occupied" | "Reserved" | "Unavailable" | "Faulted";
+export type ConnectorStatusEnumType = "Available" | "Occupied" | "Reserved" | "Unavailable" | "Faulted";
 export interface UrnOCPPCp220203StatusNotificationRequest {
     customData?: CustomDataType;
     /**

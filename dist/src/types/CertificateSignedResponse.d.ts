@@ -7,7 +7,7 @@
  * Returns whether certificate signing has been accepted, otherwise rejected.
  *
  */
-export declare type CertificateSignedStatusEnumType = "Accepted" | "Rejected";
+export type CertificateSignedStatusEnumType = "Accepted" | "Rejected";
 export interface UrnOCPPCp220203CertificateSignedResponse {
     customData?: CustomDataType;
     status: CertificateSignedStatusEnumType;

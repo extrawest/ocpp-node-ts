@@ -7,7 +7,7 @@
  * Specify which monitoring base will be set
  *
  */
-export declare type MonitoringBaseEnumType = "All" | "FactoryDefault" | "HardWiredOnly";
+export type MonitoringBaseEnumType = "All" | "FactoryDefault" | "HardWiredOnly";
 export interface UrnOCPPCp220203SetMonitoringBaseRequest {
     customData?: CustomDataType;
     monitoringBase: MonitoringBaseEnumType;

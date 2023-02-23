@@ -8,7 +8,7 @@
  *
  *
  */
-export declare type MonitorEnumType = "UpperThreshold" | "LowerThreshold" | "Delta" | "Periodic" | "PeriodicClockAligned";
+export type MonitorEnumType = "UpperThreshold" | "LowerThreshold" | "Delta" | "Periodic" | "PeriodicClockAligned";
 export interface UrnOCPPCp220203SetVariableMonitoringRequest {
     customData?: CustomDataType;
     /**

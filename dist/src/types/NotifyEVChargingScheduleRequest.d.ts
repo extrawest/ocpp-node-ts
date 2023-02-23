@@ -9,14 +9,14 @@
  * The unit of measure Limit is expressed in.
  *
  */
-export declare type ChargingRateUnitEnumType = "W" | "A";
+export type ChargingRateUnitEnumType = "W" | "A";
 /**
  * Cost. Cost_ Kind. Cost_ Kind_ Code
  * urn:x-oca:ocpp:uid:1:569243
  * The kind of cost referred to in the message element amount
  *
  */
-export declare type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
+export type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentage" | "RenewableGenerationPercentage";
 export interface UrnOCPPCp220203NotifyEVChargingScheduleRequest {
     customData?: CustomDataType;
     /**

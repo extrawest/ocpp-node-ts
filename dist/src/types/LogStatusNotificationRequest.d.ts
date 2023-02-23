@@ -7,7 +7,7 @@
  * This contains the status of the log upload.
  *
  */
-export declare type UploadLogStatusEnumType = "BadMessage" | "Idle" | "NotSupportedOperation" | "PermissionDenied" | "Uploaded" | "UploadFailure" | "Uploading" | "AcceptedCanceled";
+export type UploadLogStatusEnumType = "BadMessage" | "Idle" | "NotSupportedOperation" | "PermissionDenied" | "Uploaded" | "UploadFailure" | "Uploading" | "AcceptedCanceled";
 export interface UrnOCPPCp220203LogStatusNotificationRequest {
     customData?: CustomDataType;
     status: UploadLogStatusEnumType;

@@ -7,7 +7,7 @@
  * Indicates whether the message was processed properly.
  *
  */
-export declare type Iso15118EVCertificateStatusEnumType = "Accepted" | "Failed";
+export type Iso15118EVCertificateStatusEnumType = "Accepted" | "Failed";
 export interface UrnOCPPCp220203Get15118EVCertificateResponse {
     customData?: CustomDataType;
     status: Iso15118EVCertificateStatusEnumType;

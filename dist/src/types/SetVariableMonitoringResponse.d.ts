@@ -7,13 +7,13 @@
  * Status is OK if a value could be returned. Otherwise this will indicate the reason why a value could not be returned.
  *
  */
-export declare type SetMonitoringStatusEnumType = "Accepted" | "UnknownComponent" | "UnknownVariable" | "UnsupportedMonitorType" | "Rejected" | "Duplicate";
+export type SetMonitoringStatusEnumType = "Accepted" | "UnknownComponent" | "UnknownVariable" | "UnsupportedMonitorType" | "Rejected" | "Duplicate";
 /**
  * The type of this monitor, e.g. a threshold, delta or periodic monitor.
  *
  *
  */
-export declare type MonitorEnumType = "UpperThreshold" | "LowerThreshold" | "Delta" | "Periodic" | "PeriodicClockAligned";
+export type MonitorEnumType = "UpperThreshold" | "LowerThreshold" | "Delta" | "Periodic" | "PeriodicClockAligned";
 export interface UrnOCPPCp220203SetVariableMonitoringResponse {
     customData?: CustomDataType;
     /**

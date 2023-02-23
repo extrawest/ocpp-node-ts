@@ -12,7 +12,14 @@ describe('OcppSchema', () => {
   it('should throw format violation', () => {
     const validator = new SchemaValidator(BootNotification);
     const t = () => {
-      validator.validate({test: 'foo'})
+      validator.validate({
+        chargingStation: {
+          model: 90,
+          vendorName: "sad"
+        },
+        reason: "sdfsdf",
+        test:"sdsd"
+      })
     }
     expect(t).toThrow(ERROR_FORMATIONVIOLATION)
   });

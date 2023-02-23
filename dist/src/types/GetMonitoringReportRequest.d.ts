@@ -3,7 +3,7 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-export declare type MonitoringCriterionEnumType = "ThresholdMonitoring" | "DeltaMonitoring" | "PeriodicMonitoring";
+export type MonitoringCriterionEnumType = "ThresholdMonitoring" | "DeltaMonitoring" | "PeriodicMonitoring";
 export interface UrnOCPPCp220203GetMonitoringReportRequest {
     customData?: CustomDataType;
     /**

@@ -7,17 +7,17 @@
  * Charging Station indicates if it can process the request.
  *
  */
-export declare type GetInstalledCertificateStatusEnumType = "Accepted" | "NotFound";
+export type GetInstalledCertificateStatusEnumType = "Accepted" | "NotFound";
 /**
  * Used algorithms for the hashes provided.
  *
  */
-export declare type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
+export type HashAlgorithmEnumType = "SHA256" | "SHA384" | "SHA512";
 /**
  * Indicates the type of the requested certificate(s).
  *
  */
-export declare type GetCertificateIdUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "V2GCertificateChain" | "ManufacturerRootCertificate";
+export type GetCertificateIdUseEnumType = "V2GRootCertificate" | "MORootCertificate" | "CSMSRootCertificate" | "V2GCertificateChain" | "ManufacturerRootCertificate";
 export interface UrnOCPPCp220203GetInstalledCertificateIdsResponse {
     customData?: CustomDataType;
     status: GetInstalledCertificateStatusEnumType;

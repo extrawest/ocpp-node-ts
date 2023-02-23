@@ -7,12 +7,12 @@
  * If provided the Charging Station shall return Display Messages with the given priority only.
  *
  */
-export declare type MessagePriorityEnumType = "AlwaysFront" | "InFront" | "NormalCycle";
+export type MessagePriorityEnumType = "AlwaysFront" | "InFront" | "NormalCycle";
 /**
  * If provided the Charging Station shall return Display Messages with the given state only.
  *
  */
-export declare type MessageStateEnumType = "Charging" | "Faulted" | "Idle" | "Unavailable";
+export type MessageStateEnumType = "Charging" | "Faulted" | "Idle" | "Unavailable";
 export interface UrnOCPPCp220203GetDisplayMessagesRequest {
     customData?: CustomDataType;
     /**

@@ -7,7 +7,7 @@
  * This indicates the success or failure of the data transfer.
  *
  */
-export declare type DataTransferStatusEnumType = "Accepted" | "Rejected" | "UnknownMessageId" | "UnknownVendorId";
+export type DataTransferStatusEnumType = "Accepted" | "Rejected" | "UnknownMessageId" | "UnknownVendorId";
 export interface UrnOCPPCp220203DataTransferResponse {
     customData?: CustomDataType;
     status: DataTransferStatusEnumType;
