@@ -99,8 +99,7 @@ export class Server extends EventEmitter {
         }
       }
     } catch (e) {
-      console.error(e);
+      return undefined;
     }
-    return undefined;
   }
 }
