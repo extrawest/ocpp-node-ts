@@ -1,81 +1,26 @@
-import { Server } from "./Server";
-import { SchemaValidator } from "./SchemaValidator";
-import BootNotification from "../schemas/BootNotification.json"
+import { Server } from './Server';
+import { Server as ServerMock } from 'mock-socket';
 
-import {
-    ERROR_FORMATIONVIOLATION,
-    ERROR_PROPERTYCONSTRAINTVIOLATION, ERROR_PROTOCOLERROR, ERROR_TYPECONSTRAINTVIOLATION,
-    OcppError,
-} from "./OcppError";
-
-describe('OcppSchema', () => {
-    it('should throw format violation', () => {
-        const validator = new SchemaValidator(BootNotification);
-        const t = () => {
-            validator.validate({
-                chargingStation: {
-                    model: 90,
-                    vendorName: "sad"
-                },
-                reason: "sdfsdf",
-                test:"sdsd"
-            })
-        }
-        expect(t).toThrow(ERROR_FORMATIONVIOLATION)
+let websocketServer: ServerMock;
+describe('OcppProtocol', () => {
+    it('should extract cp id from the url', () => {
+        const cpId = Server.getCpIdFromUrl('ws://localhost/ocpp/service/CP5612')
+        expect(cpId).toBe('CP5612');
     });
 
-    it('should throw type contstrain violation', () => {
-        const validator = new SchemaValidator(BootNotification);
-        const t = () => {
-            validator.validate({
-                chargingStation: {
-                    model: 90,
-                    vendorName: "sad"
-                },
-                reason: "sdfsdf"
-            })
-        }
-        expect(t).toThrow(ERROR_TYPECONSTRAINTVIOLATION)
+    it('should extract cp and decode correctly', () => {
+        const cpId = Server.getCpIdFromUrl('ws://eparking.fi/ocpp/service/CP%205612')
+        expect(cpId).toBe('CP 5612');
     });
 
-    it('should throw property constrain violation for long string', () => {
-        const validator = new SchemaValidator(BootNotification);
-        const t = () => {
-            validator.validate({
-                chargingStation: {
-                    model: "sdassssssssssssssssssssssssssssssssssssssssssssssssss",
-                    vendorName: "sad"
-                },
-                reason: "sdfsdf"
-            })
-        }
-        expect(t).toThrow(ERROR_PROPERTYCONSTRAINTVIOLATION)
+    it('should strip query parameters from uri', () => {
+        const cpId = Server.getCpIdFromUrl('ws://sub.eparking.fi/ocpp/service/CP%205612?foo=bar')
+        expect(cpId).toBe('CP 5612');
     });
 
-    it('should throw protocol error for missing required attribute', () => {
-        const validator = new SchemaValidator(BootNotification);
-        const t = () => {
-            validator.validate({
-                chargingStation: {
-                    model: "sda",
-                    vendorName: "sad"
-                }
-            })
-        }
-        expect(t).toThrow(ERROR_PROTOCOLERROR)
-    });
-
-    it('should throw property violation for invalid enum value', () => {
-        const validator = new SchemaValidator(BootNotification);
-        const t = () => {
-            validator.validate({
-                chargingStation: {
-                    model: "sda",
-                    vendorName: "sad"
-                },
-                reason: "sdfsdf"
-            })
-        }
-        expect(t).toThrow(ERROR_PROPERTYCONSTRAINTVIOLATION)
+    it('should return undefined cp id if provided with undefined input', () => {
+        const cpId = Server.getCpIdFromUrl(undefined)
+        expect(cpId).toBe(undefined);
     });
 });
+

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>7/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,36 +81,36 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SecureContextOptions } from 'tls';
 import { IncomingMessage } from 'http';
-<span class="cstat-no" title="statement not covered" >import { Server } from './impl/Server';</span>
+import { Server } from './impl/Server';
 import { OcppClientConnection } from './OcppClientConnection';
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export class <span class="cstat-no" title="statement not covered" >O</span>cppServer </span>extends <span class="cstat-no" title="statement not covered" >Server </span>{</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  listen(<span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span></span>port: number = 9220, o</span>ptions?: SecureContextOptions) {</span>
+export class OcppServer extends Server {
+<span class="fstat-no" title="function not covered" >  listen(<span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span></span>port: number = 9220, o</span>ptions?: SecureContextOptions) {
 <span class="cstat-no" title="statement not covered" >    super.listen(port, options);</span>
   }
 &nbsp;
   on(event: 'authorization', listener: (cpId: string, req: IncomingMessage, cb: (err?: Error) =&gt; void) =&gt; void): this;
   on(event: 'connection', listener: (client: OcppClientConnection) =&gt; void): this;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  on(</span>event: string | symbol, listener: (...args: any[]) =&gt; void) {</span>
+<span class="fstat-no" title="function not covered" >  on(</span>event: string | symbol, listener: (...args: any[]) =&gt; void) {
 <span class="cstat-no" title="statement not covered" >    return super.on(event, listener);</span>
   }
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -118,7 +118,7 @@ import { OcppClientConnection } from './OcppClientConnection';
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-01T14:12:29.900Z
+                at 2023-03-02T17:18:58.197Z
             </div>
         <script src="../prettify.js"></script>
         <script>
