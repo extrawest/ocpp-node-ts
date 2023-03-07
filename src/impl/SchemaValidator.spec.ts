@@ -1,6 +1,5 @@
 import { SchemaValidator } from "./SchemaValidator";
 import BootNotification from "../schemas/BootNotification.json"
-
 import {
     ERROR_FORMATIONVIOLATION,
     ERROR_PROPERTYCONSTRAINTVIOLATION, ERROR_PROTOCOLERROR, ERROR_TYPECONSTRAINTVIOLATION,
