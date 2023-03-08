@@ -2,8 +2,7 @@ import { SchemaValidator } from "./SchemaValidator";
 import BootNotification from "../schemas/BootNotification.json"
 import {
     ERROR_FORMATIONVIOLATION,
-    ERROR_PROPERTYCONSTRAINTVIOLATION, ERROR_PROTOCOLERROR, ERROR_TYPECONSTRAINTVIOLATION,
-    OcppError,
+    ERROR_PROPERTYCONSTRAINTVIOLATION, ERROR_PROTOCOLERROR, ERROR_TYPECONSTRAINTVIOLATION
 } from "./OcppError";
 
 describe('OcppSchema', () => {
