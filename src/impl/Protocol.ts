@@ -32,9 +32,6 @@ export class Protocol {
     onMessage(message: string) {
         try {
             const [messageType, ...rest] = JSON.parse(message);
-            if (!Array.isArray(rest)) {
-                throw new Error('ProtocolError');
-            }
 
             if (messageType === CALL_MESSAGE && rest.length === 3) {
                 const [messageId, action, payload] = rest;
@@ -42,7 +39,7 @@ export class Protocol {
             } else if (messageType === CALLRESULT_MESSAGE && rest.length === 2) {
                 const [messageId, payload] = rest;
                 this.onCallResult(messageId, payload);
-            } else if (messageType === CALLERROR_MESSAGE && rest.length === 4) {
+            } else if (messageType === CALLERROR_MESSAGE && rest.length === 3) {
                 const [messageId, errorCode, errorDescription, errorDetails] = rest;
                 this.onCallError(messageId, errorCode, errorDescription, errorDetails);
             } else {

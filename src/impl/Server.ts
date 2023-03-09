@@ -97,6 +97,8 @@ export class Server extends EventEmitter {
                 if (encodedCpId) {
                     return decodeURI(encodedCpId.split('?')[0]);
                 }
+            } else {
+                throw new Error("Url is undefined")
             }
         } catch (e) {
             return undefined;

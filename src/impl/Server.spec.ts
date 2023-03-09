@@ -1,8 +1,9 @@
-import { Server } from './Server';
-import { Server as ServerMock } from 'mock-socket';
+import {Server} from './Server';
+import {WS} from "jest-websocket-mock";
 
-let websocketServer: ServerMock;
-describe('OcppProtocol', () => {
+let server: Server;
+let websocketServer: WS;
+describe('Test getCpIdFromUrl method', () => {
     it('should extract cp id from the url', () => {
         const cpId = Server.getCpIdFromUrl('ws://localhost/ocpp/service/CP5612')
         expect(cpId).toBe('CP5612');
