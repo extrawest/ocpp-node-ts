@@ -20,9 +20,6 @@ export class SchemaValidator {
    * @throws {OcppError}
    */
   validate(payload: any): void {
-    /*if (!this.schema) {
-      throw new OcppError(ERROR_PROTOCOLERROR, 'Schema for request not found');
-    }*/
     const ajv = new Ajv({strict:false});
     addFormats(ajv);
     // delete schema.$schema;
@@ -63,10 +60,6 @@ export class SchemaValidator {
           );
         }
       });
-      /*throw new OcppError(
-        ERROR_FORMATIONVIOLATION,
-        'Payload for Action is syntactically incorrect or not conform the PDU structure for Action',
-      );*/
     }
   }
 }
