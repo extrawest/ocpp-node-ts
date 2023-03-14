@@ -1,5 +1,5 @@
 import {Protocol} from "./Protocol";
-import {jest} from "@jest/globals"
+import {jest} from "@jest/globals";
 import EventEmitter from "events";
 import {WS} from "jest-websocket-mock";
 
@@ -86,8 +86,8 @@ describe("Test Protocol public function onMessage", () => {
 
     afterEach(() => {
         jest.clearAllMocks();
-        ws.close()
-    })
+        ws.close();
+    });
 })
 
 
@@ -100,13 +100,14 @@ describe("Test Protocol public function callRequest", () => {
         jest.useFakeTimers();
         jest.spyOn(global, 'setTimeout');
     });
+
     it('Send message with callRequest method successfully', () => {
         const spyOnMessage = jest.spyOn(protocol, 'callRequest');
         const request = "someRequest";
         const payload = {
             smth: "asfe"
         };
-        protocol.callRequest(request, payload)
+        protocol.callRequest(request, payload);
         expect(protocol.callRequest).toBeCalled();
         expect(spyOnMessage).toHaveBeenCalledTimes(1);
         expect(spyOnMessage).toHaveBeenCalledWith(request, payload);
@@ -121,7 +122,7 @@ describe("Test Protocol public function callRequest", () => {
         const payload = {
             smth: "asfe"
         };
-        protocol.callRequest(request, payload)
+        protocol.callRequest(request, payload);
         expect(protocol.callRequest).toBeCalled();
         expect(spyOnMessage).toHaveBeenCalledTimes(1);
         expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 10000);
@@ -144,6 +145,6 @@ describe("Test Protocol public function callRequest", () => {
 
     afterEach(() => {
         jest.clearAllMocks();
-        ws.close()
-    })
+        ws.close();
+    });
 })
