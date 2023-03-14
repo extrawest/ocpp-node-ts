@@ -2,7 +2,9 @@ import {OcppClientConnection} from "./OcppClientConnection";
 import {jest} from "@jest/globals";
 import {WS} from "jest-websocket-mock";
 import {Protocol} from "./impl/Protocol";
+import {BootNotificationRequest, BootNotificationResponse} from "./index";
 jest.mock("./impl/Client")
+//jest.mock("./OcppClientConnection")
 
 let ocppClCon = new OcppClientConnection("testId");
 let ws: WS;
@@ -44,6 +46,21 @@ describe("Test Ocpp Client Connection methods", () => {
         expect(ocppClCon.callRequest).toBeCalled();
         expect(ocppClCon.callRequest).toBeCalledTimes(1);
         expect(ocppClCon.callRequest).toBeCalledWith("CancelReservation", {reservationId: 0});
+    });
+
+    it("test on method", () => {
+        const spy = jest.spyOn(ocppClCon, "on")
+        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {});
+        jest.mock('./OcppClientConnection', () => {
+            return jest.fn().mockImplementation(() => {
+                return {on: fakeOn};
+            });
+        });
+        ocppClCon.on("BootNotification", (request: BootNotificationRequest, cb: (response: BootNotificationResponse) => void) => {
+        })
+        expect(ocppClCon.on).toBeCalled();
+        expect(ocppClCon.on).toBeCalledTimes(1);
+        expect(ocppClCon.on).toBeCalledWith("BootNotification", expect.any(Function));
     });
 
     afterEach(() => {
