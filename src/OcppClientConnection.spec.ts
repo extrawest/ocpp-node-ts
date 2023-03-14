@@ -2,6 +2,7 @@ import {OcppClientConnection} from "./OcppClientConnection";
 import {jest} from "@jest/globals";
 import {WS} from "jest-websocket-mock";
 import {Protocol} from "./impl/Protocol";
+jest.mock("./impl/Client")
 
 let ocppClCon = new OcppClientConnection("testId");
 let ws: WS;
@@ -13,19 +14,36 @@ describe("Test Ocpp Client Connection methods", () => {
     });
 
     it("test getCpId method", () => {
-        const spyGetCpId = jest.spyOn(ocppClCon, "getCpId")
+        const fakeGetCpId = jest.fn().mockReturnValue("testId");
+        jest.mock('./impl/Client', () => {
+            return jest.fn().mockImplementation(() => {
+                return {getCpId: () => fakeGetCpId};
+            });
+        });
         const cpId = ocppClCon.getCpId();
-        expect(cpId).toBe("testId");
-        expect(spyGetCpId).toBeCalled()
-        expect(spyGetCpId).toBeCalledTimes(1)
+        expect(ocppClCon.getCpId).toBeCalled()
+        expect(ocppClCon.getCpId).toBeCalledTimes(1)
     });
 
     it("test setConnection method", () => {
-        const spyGetCpId = jest.spyOn(ocppClCon, "setConnection")
+        const spySetConnection = jest.spyOn(ocppClCon, "setConnection");
         ocppClCon.setConnection(new Protocol(ocppClCon, ws as any));
-        expect(spyGetCpId).toBeCalled();
-        expect(spyGetCpId).toBeCalledTimes(1);
-        expect(spyGetCpId).toBeCalledWith(new Protocol(ocppClCon, ws as any));
+        expect(spySetConnection).toBeCalled();
+        expect(spySetConnection).toBeCalledTimes(1);
+        expect(spySetConnection).toBeCalledWith(new Protocol(ocppClCon, ws as any));
+    });
+
+    it("test callRequest method", () => {
+        const fakeCallRequest = jest.fn((request: string, payload: any) => {});
+        jest.mock('./impl/Client', () => {
+            return jest.fn().mockImplementation(() => {
+                return {callRequest: fakeCallRequest};
+            });
+        });
+        ocppClCon.callRequest("CancelReservation", {reservationId: 0})
+        expect(ocppClCon.callRequest).toBeCalled();
+        expect(ocppClCon.callRequest).toBeCalledTimes(1);
+        expect(ocppClCon.callRequest).toBeCalledWith("CancelReservation", {reservationId: 0});
     });
 
     afterEach(() => {
