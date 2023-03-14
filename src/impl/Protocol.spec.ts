@@ -110,6 +110,7 @@ describe("Test Protocol public function callRequest", () => {
         expect(protocol.callRequest).toBeCalled();
         expect(spyOnMessage).toHaveBeenCalledTimes(1);
         expect(spyOnMessage).toHaveBeenCalledWith(request, payload);
+        expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 10000);
     });
 
     it('Send message with callRequest method with no response from client', () => {
