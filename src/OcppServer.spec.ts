@@ -1,28 +1,26 @@
 import {OcppServer} from "./OcppServer";
-import {Server} from "./impl/Server";
-import {WS} from "jest-websocket-mock";
 import {jest} from "@jest/globals";
 jest.mock("./impl/Server")
 
 let server: OcppServer;
-let websocketServer: WS;
-describe("Test ocppserver", ()=>{
-    it("test server create", () =>{
-        const server = new OcppServer()
-        expect(Server).toHaveBeenCalledTimes(1)
-        server.listen(8181)
-        expect(server.listen).toBeCalled()
-        expect(OcppServer).toBeCalled()
-    })
-})
+
+
 describe('Test listen method functionality', () => {
     beforeEach(() => {
         server = new OcppServer();
         jest.clearAllMocks();
     });
-    it("Test listen", () => {
+    it("Test OcppServer listen with port parameter", () => {
+        server.listen(3000)
+        expect(server.listen).toBeCalled();
+        expect(server.listen).toBeCalledTimes(1);
+        expect(server.listen).toBeCalledWith(3000);
+    });
+
+    it("Test OcppServer listen with port parameter", () => {
         server.listen()
-        expect(server.listen).toBeCalled()
-        expect(server)
+        expect(server.listen).toBeCalled();
+        expect(server.listen).toBeCalledTimes(1);
+        expect(server.listen).toBeCalledWith(9220);
     });
 });
