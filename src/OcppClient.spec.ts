@@ -6,6 +6,7 @@ import {
     CancelReservationRequest,
     CancelReservationResponse
 } from "./index";
+import {OutgoingHttpHeaders} from "http";
 jest.mock("./impl/Client")
 
 let ocppCl: OcppClient;
@@ -48,6 +49,20 @@ describe("Test Ocpp Client Connection methods", () => {
         expect(ocppCl.on).toBeCalled();
         expect(ocppCl.on).toBeCalledTimes(1);
         expect(ocppCl.on).toBeCalledWith("CancelReservation", expect.any(Function));
+    });
+
+    it("test connect method", () => {
+        const spy = jest.spyOn(ocppCl, "connect")
+        const fakeConnect = jest.fn((centralSystemUrl: string, headers?: OutgoingHttpHeaders) => {});
+        jest.mock('./OcppClient', () => {
+            return jest.fn().mockImplementation(() => {
+                return {on: fakeConnect};
+            });
+        });
+        ocppCl.connect('ws://localhost:1234')
+        expect(ocppCl.connect).toBeCalled();
+        expect(ocppCl.connect).toBeCalledTimes(1);
+        expect(ocppCl.connect).toBeCalledWith('ws://localhost:1234');
     });
 
     afterEach(() => {

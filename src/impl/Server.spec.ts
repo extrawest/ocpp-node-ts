@@ -1,8 +1,5 @@
 import {Server} from './Server';
-import {WS} from "jest-websocket-mock";
 
-let server: Server;
-let websocketServer: WS;
 describe('Test getCpIdFromUrl method', () => {
     it('should extract cp id from the url', () => {
         const cpId = Server.getCpIdFromUrl('ws://localhost/ocpp/service/CP5612')
