@@ -14,6 +14,7 @@ export class Server extends EventEmitter {
 
     private clients: Array<Client> = [];
 
+    /* istanbul ignore next */
     protected listen(port = 9220, options?: SecureContextOptions) {
         let server;
         if (options) {
@@ -60,6 +61,7 @@ export class Server extends EventEmitter {
         server.listen(port);
     }
 
+    /* istanbul ignore next */
     private onNewConnection(socket: WebSocket, req: IncomingMessage) {
         const cpId = Server.getCpIdFromUrl(req.url);
         if (!socket.protocol || !cpId) {

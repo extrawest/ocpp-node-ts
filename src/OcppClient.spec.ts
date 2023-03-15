@@ -32,14 +32,14 @@ describe("Test Ocpp Client Connection methods", () => {
             },
             reason: "Unknown"
         };
-        const bootResp: BootNotificationResponse = await ocppCl.callRequest('BootNotification', boot);
+        await ocppCl.callRequest('BootNotification', boot);
         expect(ocppCl.callRequest).toBeCalled();
         expect(ocppCl.callRequest).toBeCalledTimes(1);
         expect(ocppCl.callRequest).toBeCalledWith("BootNotification", boot);
     });
 
     it("test on method", () => {
-        const spy = jest.spyOn(ocppCl, "on")
+        jest.spyOn(ocppCl, "on")
         const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {
         });
         jest.mock('./OcppClient', () => {
@@ -55,7 +55,7 @@ describe("Test Ocpp Client Connection methods", () => {
     });
 
     it("test connect method", () => {
-        const spy = jest.spyOn(ocppCl, "connect")
+        jest.spyOn(ocppCl, "connect")
         const fakeConnect = jest.fn((centralSystemUrl: string, headers?: OutgoingHttpHeaders) => {
         });
         jest.mock('./OcppClient', () => {

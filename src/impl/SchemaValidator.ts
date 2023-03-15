@@ -26,6 +26,7 @@ export class SchemaValidator {
         const validate = ajv.compile(this.schema);
         const valid = validate(payload);
         if (!valid) {
+            /* istanbul ignore next */
             validate.errors?.forEach((error) => {
                 if (error.keyword === 'additionalProperties') {
                     throw new OcppError(

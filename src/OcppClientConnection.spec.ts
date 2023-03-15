@@ -50,7 +50,7 @@ describe("Test Ocpp Client Connection methods", () => {
     });
 
     it("test on method", () => {
-        const spy = jest.spyOn(ocppClCon, "on")
+        jest.spyOn(ocppClCon, "on")
         const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {
         });
         jest.mock('./OcppClientConnection', () => {

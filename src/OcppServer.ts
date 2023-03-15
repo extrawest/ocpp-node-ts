@@ -4,7 +4,7 @@ import {Server} from './impl/Server';
 import {OcppClientConnection} from './OcppClientConnection';
 
 export class OcppServer extends Server {
-    listen(port: number = 9220, options?: SecureContextOptions) {
+    listen(port = 9220, options?: SecureContextOptions) {
         super.listen(port, options);
     }
 

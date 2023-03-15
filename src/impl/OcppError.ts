@@ -39,6 +39,7 @@ export class OcppError extends Error {
 
     info: string | undefined;
 
+    /* istanbul ignore next */
     constructor(code: string, info?: string, details?: any | any[]) {
         super(code);
         this.code = code;

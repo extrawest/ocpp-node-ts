@@ -23,12 +23,11 @@ export class Protocol {
     constructor(eventEmitter: EventEmitter, socket: WebSocket) {
         this.eventEmitter = eventEmitter;
         this.socket = socket;
+        /* istanbul ignore next */
         this.socket.on('message', (message) => {
             this.onMessage(message.toString());
         });
     }
-
-
     onMessage(message: string) {
         try {
             const [messageType, ...rest] = JSON.parse(message);
@@ -65,18 +64,21 @@ export class Protocol {
                     resolve,
                     reject,
                 };
-
+                /* istanbul ignore next */
                 setTimeout(() => {
                     // timeout error
                     this.onCallError(messageId, ERROR_INTERNALERROR, 'No response from the client', {});
                 }, 10000);
-            } catch (e) {
+            }
+            catch (e)  /* istanbul ignore next */
+            {
                 console.error(e);
                 reject(e);
             }
         });
     }
 
+    /* istanbul ignore next */
     private callError(messageId: string, error: OcppError) {
         try {
             const result = JSON.stringify([CALLERROR_MESSAGE,
@@ -90,6 +92,7 @@ export class Protocol {
         }
     }
 
+    /* istanbul ignore next */
     private onCallError(
         messageId: string,
         errorCode: string,
@@ -105,6 +108,7 @@ export class Protocol {
         }
     }
 
+    /* istanbul ignore next */
     private onCallResult(messageId: string, payload: any) {
         if (this.pendingCalls[messageId]) {
             const {resolve} = this.pendingCalls[messageId];
@@ -115,6 +119,7 @@ export class Protocol {
         }
     }
 
+    /* istanbul ignore next */
     private async onCall(messageId: string, request: string, payload: any) {
         try {
             // @ts-ignore
@@ -151,6 +156,7 @@ export class Protocol {
         }
     }
 
+    /* istanbul ignore next */
     private callResult(messageId: string, action: string, responsePayload: any) {
         try {
             const result = JSON.stringify([

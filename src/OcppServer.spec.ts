@@ -32,7 +32,7 @@ describe('Test on method', () => {
         jest.clearAllMocks();
     });
     it("test on method", () => {
-        const spy = jest.spyOn(server, "on")
+        jest.spyOn(server, "on")
         const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {
         });
         jest.mock('./OcppServer', () => {
