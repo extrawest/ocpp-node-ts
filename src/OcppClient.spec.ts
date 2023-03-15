@@ -1,16 +1,18 @@
 import {OcppClient} from "./OcppClient";
 import {jest} from "@jest/globals";
-import {WS} from "jest-websocket-mock";
-import {Protocol} from "./impl/Protocol";
-import {BootNotificationRequest, BootNotificationResponse} from "./index";
+import {
+    BootNotificationRequest,
+    BootNotificationResponse,
+    CancelReservationRequest,
+    CancelReservationResponse
+} from "./index";
 jest.mock("./impl/Client")
-let ocppClCon: OcppClient;
-let ws: WS;
+
+let ocppCl: OcppClient;
 
 describe("Test Ocpp Client Connection methods", () => {
     beforeEach(() => {
-        ws = new WS('ws://localhost:1234');
-        ocppClCon = new OcppClient("testId");
+        ocppCl = new OcppClient("testId");
     });
 
     it("test callRequest method", async () => {
@@ -27,14 +29,28 @@ describe("Test Ocpp Client Connection methods", () => {
             },
             reason: "Unknown"
         };
-        const bootResp: BootNotificationResponse = await ocppClCon.callRequest('BootNotification', boot);
-        expect(ocppClCon.callRequest).toBeCalled();
-        expect(ocppClCon.callRequest).toBeCalledTimes(1);
-        expect(ocppClCon.callRequest).toBeCalledWith("BootNotification", boot);
+        const bootResp: BootNotificationResponse = await ocppCl.callRequest('BootNotification', boot);
+        expect(ocppCl.callRequest).toBeCalled();
+        expect(ocppCl.callRequest).toBeCalledTimes(1);
+        expect(ocppCl.callRequest).toBeCalledWith("BootNotification", boot);
+    });
+
+    it("test on method", () => {
+        const spy = jest.spyOn(ocppCl, "on")
+        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {});
+        jest.mock('./OcppClient', () => {
+            return jest.fn().mockImplementation(() => {
+                return {on: fakeOn};
+            });
+        });
+        ocppCl.on("CancelReservation", (request: CancelReservationRequest, cb: (response: CancelReservationResponse) => void) => {
+        })
+        expect(ocppCl.on).toBeCalled();
+        expect(ocppCl.on).toBeCalledTimes(1);
+        expect(ocppCl.on).toBeCalledWith("CancelReservation", expect.any(Function));
     });
 
     afterEach(() => {
         jest.clearAllMocks();
-        ws.close();
     });
 });
