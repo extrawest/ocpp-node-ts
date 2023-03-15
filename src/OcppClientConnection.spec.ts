@@ -3,8 +3,8 @@ import {jest} from "@jest/globals";
 import {WS} from "jest-websocket-mock";
 import {Protocol} from "./impl/Protocol";
 import {BootNotificationRequest, BootNotificationResponse} from "./index";
-jest.mock("./impl/Client")
 
+jest.mock("./impl/Client")
 
 let ocppClCon = new OcppClientConnection("testId");
 let ws: WS;
@@ -36,7 +36,8 @@ describe("Test Ocpp Client Connection methods", () => {
     });
 
     it("test callRequest method", () => {
-        const fakeCallRequest = jest.fn((request: string, payload: any) => {});
+        const fakeCallRequest = jest.fn((request: string, payload: any) => {
+        });
         jest.mock('./impl/Client', () => {
             return jest.fn().mockImplementation(() => {
                 return {callRequest: fakeCallRequest};
@@ -50,7 +51,8 @@ describe("Test Ocpp Client Connection methods", () => {
 
     it("test on method", () => {
         const spy = jest.spyOn(ocppClCon, "on")
-        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {});
+        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {
+        });
         jest.mock('./OcppClientConnection', () => {
             return jest.fn().mockImplementation(() => {
                 return {on: fakeOn};

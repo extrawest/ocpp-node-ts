@@ -107,7 +107,7 @@ describe('OcppSchema', () => {
     it('should throw format violation', () => {
         const validator = new SchemaValidator(customSchema);
         const t = () => {
-            validator.validate({reason:"123"})
+            validator.validate({reason: "123"})
         }
         expect(t).toThrow(ERROR_FORMATIONVIOLATION)
     });

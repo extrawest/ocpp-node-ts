@@ -1,4 +1,4 @@
-import { Client } from './impl/Client';
+import {Client} from './impl/Client';
 import {UrnOCPPCp220203AuthorizeRequest} from './types/AuthorizeRequest'
 import {UrnOCPPCp220203AuthorizeResponse} from './types/AuthorizeResponse'
 import {UrnOCPPCp220203BootNotificationRequest} from './types/BootNotification'
@@ -82,7 +82,9 @@ import {UrnOCPPCp220203NotifyReportResponse} from './types/NotifyReportResponse'
 import {UrnOCPPCp220203PublishFirmwareRequest} from './types/PublishFirmwareRequest'
 import {UrnOCPPCp220203PublishFirmwareResponse} from './types/PublishFirmwareResponse'
 import {UrnOCPPCp220203PublishFirmwareStatusNotificationRequest} from './types/PublishFirmwareStatusNotificationRequest'
-import {UrnOCPPCp220203PublishFirmwareStatusNotificationResponse} from './types/PublishFirmwareStatusNotificationResponse'
+import {
+    UrnOCPPCp220203PublishFirmwareStatusNotificationResponse
+} from './types/PublishFirmwareStatusNotificationResponse'
 import {UrnOCPPCp220203ReportChargingProfilesRequest} from './types/ReportChargingProfilesRequest'
 import {UrnOCPPCp220203ReportChargingProfilesResponse} from './types/ReportChargingProfilesResponse'
 import {UrnOCPPCp220203RequestStartTransactionRequest} from './types/RequestStartTransactionRequest'
@@ -127,91 +129,91 @@ import {UrnOCPPCp220203UnpublishFirmwareRequest} from './types/UnpublishFirmware
 import {UrnOCPPCp220203UnpublishFirmwareResponse} from './types/UnpublishFirmwareResponse'
 import {UrnOCPPCp220203UpdateFirmwareRequest} from './types/UpdateFirmwareRequest'
 import {UrnOCPPCp220203UpdateFirmwareResponse} from './types/UpdateFirmwareResponse'
-import { Protocol } from './impl/Protocol';
+import {Protocol} from './impl/Protocol';
 
 export class OcppClientConnection extends Client {
-  getCpId(): string {
-    return super.getCpId();
-  }
+    getCpId(): string {
+        return super.getCpId();
+    }
 
-  setConnection(connection: Protocol | null): void {
-    super.setConnection(connection);
-  }
+    setConnection(connection: Protocol | null): void {
+        super.setConnection(connection);
+    }
 
-  on(event: 'Authorize', listener: (request: UrnOCPPCp220203AuthorizeRequest, cb:(response:UrnOCPPCp220203AuthorizeResponse) => void) => void): this;
-  on(event: 'BootNotification', listener: (request: UrnOCPPCp220203BootNotificationRequest, cb:(response:UrnOCPPCp220203BootNotificationResponse) => void) => void): this;
-  on(event: 'ClearedChargingLimit', listener: (request: UrnOCPPCp220203ClearedChargingLimitRequest, cb:(response:UrnOCPPCp220203ClearedChargingLimitResponse) => void) => void): this;
-  on(event: 'DataTransfer', listener: (request: UrnOCPPCp220203DataTransferRequest, cb:(response:UrnOCPPCp220203DataTransferResponse) => void) => void): this;
-  on(event: 'Get15118EVCertificate', listener: (request: UrnOCPPCp220203Get15118EVCertificateRequest, cb:(response:UrnOCPPCp220203Get15118EVCertificateResponse) => void) => void): this;
-  on(event: 'GetCertificateStatus', listener: (request: UrnOCPPCp220203GetCertificateStatusRequest, cb:(response:UrnOCPPCp220203GetCertificateStatusResponse) => void) => void): this;
-  on(event: 'LogStatusNotification', listener: (request: UrnOCPPCp220203LogStatusNotificationRequest, cb:(response:UrnOCPPCp220203LogStatusNotificationResponse) => void) => void): this;
-  on(event: 'NotifyChargingLimit', listener: (request: UrnOCPPCp220203NotifyChargingLimitRequest, cb:(response:UrnOCPPCp220203NotifyChargingLimitResponse) => void) => void): this;
-  on(event: 'NotifyCustomerInformation', listener: (request: UrnOCPPCp220203NotifyCustomerInformationRequest, cb:(response:UrnOCPPCp220203NotifyCustomerInformationResponse) => void) => void): this;
-  on(event: 'NotifyDisplayMessages', listener: (request: UrnOCPPCp220203NotifyDisplayMessagesRequest, cb:(response:UrnOCPPCp220203NotifyDisplayMessagesResponse) => void) => void): this;
-  on(event: 'NotifyEVChargingNeeds', listener: (request: UrnOCPPCp220203NotifyEVChargingNeedsRequest, cb:(response:UrnOCPPCp220203NotifyEVChargingNeedsResponse) => void) => void): this;
-  on(event: 'NotifyEVChargingSchedule', listener: (request: UrnOCPPCp220203NotifyEVChargingScheduleRequest, cb:(response:UrnOCPPCp220203NotifyEVChargingScheduleResponse) => void) => void): this;
-  on(event: 'NotifyEvent', listener: (request: UrnOCPPCp220203NotifyEventRequest, cb:(response:UrnOCPPCp220203NotifyEventResponse) => void) => void): this;
-  on(event: 'NotifyMonitoringReport', listener: (request: UrnOCPPCp220203NotifyMonitoringReportRequest, cb:(response:UrnOCPPCp220203NotifyMonitoringReportResponse) => void) => void): this;
-  on(event: 'NotifyReport', listener: (request: UrnOCPPCp220203NotifyReportRequest, cb:(response:UrnOCPPCp220203NotifyReportResponse) => void) => void): this;
-  on(event: 'PublishFirmwareStatusNotification', listener: (request: UrnOCPPCp220203PublishFirmwareStatusNotificationRequest, cb:(response:UrnOCPPCp220203PublishFirmwareStatusNotificationResponse) => void) => void): this;
-  on(event: 'ReportChargingProfiles', listener: (request: UrnOCPPCp220203ReportChargingProfilesRequest, cb:(response:UrnOCPPCp220203ReportChargingProfilesResponse) => void) => void): this;
-  on(event: 'ReservationStatusUpdate', listener: (request: UrnOCPPCp220203ReservationStatusUpdateRequest, cb:(response:UrnOCPPCp220203ReservationStatusUpdateResponse) => void) => void): this;
-  on(event: 'SecurityEventNotification', listener: (request: UrnOCPPCp220203SecurityEventNotificationRequest, cb:(response:UrnOCPPCp220203SecurityEventNotificationResponse) => void) => void): this;
-  on(event: 'SignCertificate', listener: (request: UrnOCPPCp220203SignCertificateRequest, cb:(response:UrnOCPPCp220203SignCertificateResponse) => void) => void): this;
-  on(event: 'TransactionEvent', listener: (request: UrnOCPPCp220203TransactionEventRequest, cb:(response:UrnOCPPCp220203TransactionEventResponse) => void) => void): this;
-  on(event: 'FirmwareStatusNotification', listener: (request: UrnOCPPCp220203FirmwareStatusNotificationRequest, cb:(response:UrnOCPPCp220203FirmwareStatusNotificationResponse) => void) => void): this;
-  on(event: 'Heartbeat', listener: (request: UrnOCPPCp220203HeartbeatRequest, cb:(response:UrnOCPPCp220203HeartbeatResponse) => void) => void): this;
-  on(event: 'MeterValues', listener: (request: UrnOCPPCp220203MeterValuesRequest, cb:(response:UrnOCPPCp220203MeterValuesResponse) => void) => void): this;
-  on(event: 'StatusNotification', listener: (request: UrnOCPPCp220203StatusNotificationRequest, cb:(response:UrnOCPPCp220203StatusNotificationResponse) => void) => void): this;
-  on(event: 'close', listener: (code: number, reason: Buffer) => void): this;
-  on(event: 'error', listener: (err: Error) => void): this;
-  on(event: string | symbol, listener: (...args: any[]) => void) {
-    return super.on(event, listener);
-  }
+    on(event: 'Authorize', listener: (request: UrnOCPPCp220203AuthorizeRequest, cb: (response: UrnOCPPCp220203AuthorizeResponse) => void) => void): this;
+    on(event: 'BootNotification', listener: (request: UrnOCPPCp220203BootNotificationRequest, cb: (response: UrnOCPPCp220203BootNotificationResponse) => void) => void): this;
+    on(event: 'ClearedChargingLimit', listener: (request: UrnOCPPCp220203ClearedChargingLimitRequest, cb: (response: UrnOCPPCp220203ClearedChargingLimitResponse) => void) => void): this;
+    on(event: 'DataTransfer', listener: (request: UrnOCPPCp220203DataTransferRequest, cb: (response: UrnOCPPCp220203DataTransferResponse) => void) => void): this;
+    on(event: 'Get15118EVCertificate', listener: (request: UrnOCPPCp220203Get15118EVCertificateRequest, cb: (response: UrnOCPPCp220203Get15118EVCertificateResponse) => void) => void): this;
+    on(event: 'GetCertificateStatus', listener: (request: UrnOCPPCp220203GetCertificateStatusRequest, cb: (response: UrnOCPPCp220203GetCertificateStatusResponse) => void) => void): this;
+    on(event: 'LogStatusNotification', listener: (request: UrnOCPPCp220203LogStatusNotificationRequest, cb: (response: UrnOCPPCp220203LogStatusNotificationResponse) => void) => void): this;
+    on(event: 'NotifyChargingLimit', listener: (request: UrnOCPPCp220203NotifyChargingLimitRequest, cb: (response: UrnOCPPCp220203NotifyChargingLimitResponse) => void) => void): this;
+    on(event: 'NotifyCustomerInformation', listener: (request: UrnOCPPCp220203NotifyCustomerInformationRequest, cb: (response: UrnOCPPCp220203NotifyCustomerInformationResponse) => void) => void): this;
+    on(event: 'NotifyDisplayMessages', listener: (request: UrnOCPPCp220203NotifyDisplayMessagesRequest, cb: (response: UrnOCPPCp220203NotifyDisplayMessagesResponse) => void) => void): this;
+    on(event: 'NotifyEVChargingNeeds', listener: (request: UrnOCPPCp220203NotifyEVChargingNeedsRequest, cb: (response: UrnOCPPCp220203NotifyEVChargingNeedsResponse) => void) => void): this;
+    on(event: 'NotifyEVChargingSchedule', listener: (request: UrnOCPPCp220203NotifyEVChargingScheduleRequest, cb: (response: UrnOCPPCp220203NotifyEVChargingScheduleResponse) => void) => void): this;
+    on(event: 'NotifyEvent', listener: (request: UrnOCPPCp220203NotifyEventRequest, cb: (response: UrnOCPPCp220203NotifyEventResponse) => void) => void): this;
+    on(event: 'NotifyMonitoringReport', listener: (request: UrnOCPPCp220203NotifyMonitoringReportRequest, cb: (response: UrnOCPPCp220203NotifyMonitoringReportResponse) => void) => void): this;
+    on(event: 'NotifyReport', listener: (request: UrnOCPPCp220203NotifyReportRequest, cb: (response: UrnOCPPCp220203NotifyReportResponse) => void) => void): this;
+    on(event: 'PublishFirmwareStatusNotification', listener: (request: UrnOCPPCp220203PublishFirmwareStatusNotificationRequest, cb: (response: UrnOCPPCp220203PublishFirmwareStatusNotificationResponse) => void) => void): this;
+    on(event: 'ReportChargingProfiles', listener: (request: UrnOCPPCp220203ReportChargingProfilesRequest, cb: (response: UrnOCPPCp220203ReportChargingProfilesResponse) => void) => void): this;
+    on(event: 'ReservationStatusUpdate', listener: (request: UrnOCPPCp220203ReservationStatusUpdateRequest, cb: (response: UrnOCPPCp220203ReservationStatusUpdateResponse) => void) => void): this;
+    on(event: 'SecurityEventNotification', listener: (request: UrnOCPPCp220203SecurityEventNotificationRequest, cb: (response: UrnOCPPCp220203SecurityEventNotificationResponse) => void) => void): this;
+    on(event: 'SignCertificate', listener: (request: UrnOCPPCp220203SignCertificateRequest, cb: (response: UrnOCPPCp220203SignCertificateResponse) => void) => void): this;
+    on(event: 'TransactionEvent', listener: (request: UrnOCPPCp220203TransactionEventRequest, cb: (response: UrnOCPPCp220203TransactionEventResponse) => void) => void): this;
+    on(event: 'FirmwareStatusNotification', listener: (request: UrnOCPPCp220203FirmwareStatusNotificationRequest, cb: (response: UrnOCPPCp220203FirmwareStatusNotificationResponse) => void) => void): this;
+    on(event: 'Heartbeat', listener: (request: UrnOCPPCp220203HeartbeatRequest, cb: (response: UrnOCPPCp220203HeartbeatResponse) => void) => void): this;
+    on(event: 'MeterValues', listener: (request: UrnOCPPCp220203MeterValuesRequest, cb: (response: UrnOCPPCp220203MeterValuesResponse) => void) => void): this;
+    on(event: 'StatusNotification', listener: (request: UrnOCPPCp220203StatusNotificationRequest, cb: (response: UrnOCPPCp220203StatusNotificationResponse) => void) => void): this;
+    on(event: 'close', listener: (code: number, reason: Buffer) => void): this;
+    on(event: 'error', listener: (err: Error) => void): this;
+    on(event: string | symbol, listener: (...args: any[]) => void) {
+        return super.on(event, listener);
+    }
 
-  callRequest(request: 'CancelReservation', payload: UrnOCPPCp220203CancelReservationRequest): Promise<UrnOCPPCp220203CancelReservationResponse>
-  callRequest(request: 'ChangeAvailability', payload: UrnOCPPCp220203ChangeAvailabilityRequest): Promise<UrnOCPPCp220203ChangeAvailabilityResponse>
-  callRequest(request: 'CertificateSigned', payload: UrnOCPPCp220203CertificateSignedRequest): Promise<UrnOCPPCp220203CertificateSignedResponse>
-  callRequest(request: 'ClearCache', payload: UrnOCPPCp220203ClearCacheRequest): Promise<UrnOCPPCp220203ClearCacheResponse>
-  callRequest(request: 'ClearChargingProfile', payload: UrnOCPPCp220203ClearChargingProfileRequest): Promise<UrnOCPPCp220203ClearChargingProfileResponse>
-  callRequest(request: 'ClearDisplayMessage', payload: UrnOCPPCp220203ClearDisplayMessageRequest): Promise<UrnOCPPCp220203ClearDisplayMessageResponse>
-  callRequest(request: 'ClearVariableMonitoring', payload: UrnOCPPCp220203ClearVariableMonitoringRequest): Promise<UrnOCPPCp220203ClearVariableMonitoringResponse>
-  callRequest(request: 'CostUpdated', payload: UrnOCPPCp220203CostUpdatedRequest): Promise<UrnOCPPCp220203CostUpdatedResponse>
-  callRequest(request: 'CustomerInformation', payload: UrnOCPPCp220203CustomerInformationRequest): Promise<UrnOCPPCp220203CustomerInformationResponse>
-  callRequest(request: 'DeleteCertificate', payload: UrnOCPPCp220203DeleteCertificateRequest): Promise<UrnOCPPCp220203DeleteCertificateResponse>
-  callRequest(request: 'GetBaseReport', payload: UrnOCPPCp220203GetBaseReportRequest): Promise<UrnOCPPCp220203GetBaseReportResponse>
-  callRequest(request: 'GetChargingProfilesReport', payload: UrnOCPPCp220203GetChargingProfilesRequest): Promise<UrnOCPPCp220203GetChargingProfilesResponse>
-  callRequest(request: 'GetDisplayMessages', payload: UrnOCPPCp220203GetDisplayMessagesRequest): Promise<UrnOCPPCp220203GetDisplayMessagesResponse>
-  callRequest(request: 'GetInstalledCertificateIds', payload: UrnOCPPCp220203GetInstalledCertificateIdsRequest): Promise<UrnOCPPCp220203GetInstalledCertificateIdsResponse>
-  callRequest(request: 'GetLog', payload: UrnOCPPCp220203GetLogRequest): Promise<UrnOCPPCp220203GetLogResponse>
-  callRequest(request: 'GetMonitoringReport', payload: UrnOCPPCp220203GetMonitoringReportRequest): Promise<UrnOCPPCp220203GetMonitoringReportResponse>
-  callRequest(request: 'GetReport', payload: UrnOCPPCp220203GetReportRequest): Promise<UrnOCPPCp220203GetReportResponse>
-  callRequest(request: 'GetTransactionStatus', payload: UrnOCPPCp220203GetTransactionStatusRequest): Promise<UrnOCPPCp220203GetTransactionStatusResponse>
-  callRequest(request: 'GetVariables', payload: UrnOCPPCp220203GetVariablesRequest): Promise<UrnOCPPCp220203GetVariablesResponse>
-  callRequest(request: 'InstallCertificate', payload: UrnOCPPCp220203InstallCertificateRequest): Promise<UrnOCPPCp220203InstallCertificateResponse>
-  callRequest(request: 'PublishFirmware', payload: UrnOCPPCp220203PublishFirmwareRequest): Promise<UrnOCPPCp220203PublishFirmwareResponse>
-  callRequest(request: 'RequestStartTransaction', payload: UrnOCPPCp220203RequestStartTransactionRequest): Promise<UrnOCPPCp220203RequestStartTransactionResponse>
-  callRequest(request: 'RequestStopTransaction', payload: UrnOCPPCp220203RequestStopTransactionRequest): Promise<UrnOCPPCp220203RequestStopTransactionResponse>
-  callRequest(request: 'SetDisplayMessage', payload: UrnOCPPCp220203SetDisplayMessageRequest): Promise<UrnOCPPCp220203SetDisplayMessageResponse>
-  callRequest(request: 'SetMonitoringBase', payload: UrnOCPPCp220203SetMonitoringBaseRequest): Promise<UrnOCPPCp220203SetMonitoringBaseResponse>
-  callRequest(request: 'SetMonitoringLevel', payload: UrnOCPPCp220203SetMonitoringLevelRequest): Promise<UrnOCPPCp220203SetMonitoringLevelResponse>
-  callRequest(request: 'SetNetworkProfile', payload: UrnOCPPCp220203SetNetworkProfileRequest): Promise<UrnOCPPCp220203SetNetworkProfileResponse>
-  callRequest(request: 'SetVariableMonitoring', payload: UrnOCPPCp220203SetVariableMonitoringRequest): Promise<UrnOCPPCp220203SetVariableMonitoringResponse>
-  callRequest(request: 'SetVariables', payload: UrnOCPPCp220203SetVariablesRequest): Promise<UrnOCPPCp220203SetVariablesResponse>
-  callRequest(request: 'UnpublishFirmware', payload: UrnOCPPCp220203UnpublishFirmwareRequest): Promise<UrnOCPPCp220203UnpublishFirmwareResponse>
-  callRequest(request: 'DataTransfer', payload: UrnOCPPCp220203DataTransferRequest): Promise<UrnOCPPCp220203DataTransferResponse>
-  callRequest(request: 'GetCompositeSchedule', payload: UrnOCPPCp220203GetCompositeScheduleRequest): Promise<UrnOCPPCp220203GetCompositeScheduleResponse>
-  callRequest(request: 'GetLocalListVersion', payload: UrnOCPPCp220203GetLocalListVersionRequest): Promise<UrnOCPPCp220203GetLocalListVersionResponse>
-  callRequest(request: 'ReserveNow', payload: UrnOCPPCp220203ReserveNowRequest): Promise<UrnOCPPCp220203ReserveNowResponse>
-  callRequest(request: 'Reset', payload: UrnOCPPCp220203ResetRequest): Promise<UrnOCPPCp220203ResetResponse>
-  callRequest(request: 'SendLocalList', payload: UrnOCPPCp220203SendLocalListRequest): Promise<UrnOCPPCp220203SendLocalListResponse>
-  callRequest(request: 'SetChargingProfile', payload: UrnOCPPCp220203SetChargingProfileRequest): Promise<UrnOCPPCp220203SetChargingProfileResponse>
-  callRequest(request: 'TriggerMessage', payload: UrnOCPPCp220203TriggerMessageRequest): Promise<UrnOCPPCp220203TriggerMessageResponse>
-  callRequest(request: 'UnlockConnector', payload: UrnOCPPCp220203UnlockConnectorRequest): Promise<UrnOCPPCp220203UnlockConnectorResponse>
-  callRequest(request: 'UpdateFirmware', payload: UrnOCPPCp220203UpdateFirmwareRequest): Promise<UrnOCPPCp220203UpdateFirmwareResponse>
-  callRequest(request: string, payload: any): Promise<any> {
-    return super.callRequest(request, payload);
-  }
+    callRequest(request: 'CancelReservation', payload: UrnOCPPCp220203CancelReservationRequest): Promise<UrnOCPPCp220203CancelReservationResponse>
+    callRequest(request: 'ChangeAvailability', payload: UrnOCPPCp220203ChangeAvailabilityRequest): Promise<UrnOCPPCp220203ChangeAvailabilityResponse>
+    callRequest(request: 'CertificateSigned', payload: UrnOCPPCp220203CertificateSignedRequest): Promise<UrnOCPPCp220203CertificateSignedResponse>
+    callRequest(request: 'ClearCache', payload: UrnOCPPCp220203ClearCacheRequest): Promise<UrnOCPPCp220203ClearCacheResponse>
+    callRequest(request: 'ClearChargingProfile', payload: UrnOCPPCp220203ClearChargingProfileRequest): Promise<UrnOCPPCp220203ClearChargingProfileResponse>
+    callRequest(request: 'ClearDisplayMessage', payload: UrnOCPPCp220203ClearDisplayMessageRequest): Promise<UrnOCPPCp220203ClearDisplayMessageResponse>
+    callRequest(request: 'ClearVariableMonitoring', payload: UrnOCPPCp220203ClearVariableMonitoringRequest): Promise<UrnOCPPCp220203ClearVariableMonitoringResponse>
+    callRequest(request: 'CostUpdated', payload: UrnOCPPCp220203CostUpdatedRequest): Promise<UrnOCPPCp220203CostUpdatedResponse>
+    callRequest(request: 'CustomerInformation', payload: UrnOCPPCp220203CustomerInformationRequest): Promise<UrnOCPPCp220203CustomerInformationResponse>
+    callRequest(request: 'DeleteCertificate', payload: UrnOCPPCp220203DeleteCertificateRequest): Promise<UrnOCPPCp220203DeleteCertificateResponse>
+    callRequest(request: 'GetBaseReport', payload: UrnOCPPCp220203GetBaseReportRequest): Promise<UrnOCPPCp220203GetBaseReportResponse>
+    callRequest(request: 'GetChargingProfilesReport', payload: UrnOCPPCp220203GetChargingProfilesRequest): Promise<UrnOCPPCp220203GetChargingProfilesResponse>
+    callRequest(request: 'GetDisplayMessages', payload: UrnOCPPCp220203GetDisplayMessagesRequest): Promise<UrnOCPPCp220203GetDisplayMessagesResponse>
+    callRequest(request: 'GetInstalledCertificateIds', payload: UrnOCPPCp220203GetInstalledCertificateIdsRequest): Promise<UrnOCPPCp220203GetInstalledCertificateIdsResponse>
+    callRequest(request: 'GetLog', payload: UrnOCPPCp220203GetLogRequest): Promise<UrnOCPPCp220203GetLogResponse>
+    callRequest(request: 'GetMonitoringReport', payload: UrnOCPPCp220203GetMonitoringReportRequest): Promise<UrnOCPPCp220203GetMonitoringReportResponse>
+    callRequest(request: 'GetReport', payload: UrnOCPPCp220203GetReportRequest): Promise<UrnOCPPCp220203GetReportResponse>
+    callRequest(request: 'GetTransactionStatus', payload: UrnOCPPCp220203GetTransactionStatusRequest): Promise<UrnOCPPCp220203GetTransactionStatusResponse>
+    callRequest(request: 'GetVariables', payload: UrnOCPPCp220203GetVariablesRequest): Promise<UrnOCPPCp220203GetVariablesResponse>
+    callRequest(request: 'InstallCertificate', payload: UrnOCPPCp220203InstallCertificateRequest): Promise<UrnOCPPCp220203InstallCertificateResponse>
+    callRequest(request: 'PublishFirmware', payload: UrnOCPPCp220203PublishFirmwareRequest): Promise<UrnOCPPCp220203PublishFirmwareResponse>
+    callRequest(request: 'RequestStartTransaction', payload: UrnOCPPCp220203RequestStartTransactionRequest): Promise<UrnOCPPCp220203RequestStartTransactionResponse>
+    callRequest(request: 'RequestStopTransaction', payload: UrnOCPPCp220203RequestStopTransactionRequest): Promise<UrnOCPPCp220203RequestStopTransactionResponse>
+    callRequest(request: 'SetDisplayMessage', payload: UrnOCPPCp220203SetDisplayMessageRequest): Promise<UrnOCPPCp220203SetDisplayMessageResponse>
+    callRequest(request: 'SetMonitoringBase', payload: UrnOCPPCp220203SetMonitoringBaseRequest): Promise<UrnOCPPCp220203SetMonitoringBaseResponse>
+    callRequest(request: 'SetMonitoringLevel', payload: UrnOCPPCp220203SetMonitoringLevelRequest): Promise<UrnOCPPCp220203SetMonitoringLevelResponse>
+    callRequest(request: 'SetNetworkProfile', payload: UrnOCPPCp220203SetNetworkProfileRequest): Promise<UrnOCPPCp220203SetNetworkProfileResponse>
+    callRequest(request: 'SetVariableMonitoring', payload: UrnOCPPCp220203SetVariableMonitoringRequest): Promise<UrnOCPPCp220203SetVariableMonitoringResponse>
+    callRequest(request: 'SetVariables', payload: UrnOCPPCp220203SetVariablesRequest): Promise<UrnOCPPCp220203SetVariablesResponse>
+    callRequest(request: 'UnpublishFirmware', payload: UrnOCPPCp220203UnpublishFirmwareRequest): Promise<UrnOCPPCp220203UnpublishFirmwareResponse>
+    callRequest(request: 'DataTransfer', payload: UrnOCPPCp220203DataTransferRequest): Promise<UrnOCPPCp220203DataTransferResponse>
+    callRequest(request: 'GetCompositeSchedule', payload: UrnOCPPCp220203GetCompositeScheduleRequest): Promise<UrnOCPPCp220203GetCompositeScheduleResponse>
+    callRequest(request: 'GetLocalListVersion', payload: UrnOCPPCp220203GetLocalListVersionRequest): Promise<UrnOCPPCp220203GetLocalListVersionResponse>
+    callRequest(request: 'ReserveNow', payload: UrnOCPPCp220203ReserveNowRequest): Promise<UrnOCPPCp220203ReserveNowResponse>
+    callRequest(request: 'Reset', payload: UrnOCPPCp220203ResetRequest): Promise<UrnOCPPCp220203ResetResponse>
+    callRequest(request: 'SendLocalList', payload: UrnOCPPCp220203SendLocalListRequest): Promise<UrnOCPPCp220203SendLocalListResponse>
+    callRequest(request: 'SetChargingProfile', payload: UrnOCPPCp220203SetChargingProfileRequest): Promise<UrnOCPPCp220203SetChargingProfileResponse>
+    callRequest(request: 'TriggerMessage', payload: UrnOCPPCp220203TriggerMessageRequest): Promise<UrnOCPPCp220203TriggerMessageResponse>
+    callRequest(request: 'UnlockConnector', payload: UrnOCPPCp220203UnlockConnectorRequest): Promise<UrnOCPPCp220203UnlockConnectorResponse>
+    callRequest(request: 'UpdateFirmware', payload: UrnOCPPCp220203UpdateFirmwareRequest): Promise<UrnOCPPCp220203UpdateFirmwareResponse>
+    callRequest(request: string, payload: any): Promise<any> {
+        return super.callRequest(request, payload);
+    }
 }
 
 

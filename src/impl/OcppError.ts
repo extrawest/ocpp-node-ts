@@ -33,16 +33,16 @@ export const ERROR_TYPECONSTRAINTVIOLATION = 'TypeConstraintViolation';
 export const ERROR_GENERICERROR = 'GenericError';
 
 export class OcppError extends Error {
-  code: string;
+    code: string;
 
-  details: any;
+    details: any;
 
-  info: string | undefined;
+    info: string | undefined;
 
-  constructor(code: string, info?: string, details?: any | any[]) {
-    super(code);
-    this.code = code;
-    this.info = info;
-    this.details = details;
-  }
+    constructor(code: string, info?: string, details?: any | any[]) {
+        super(code);
+        this.code = code;
+        this.info = info;
+        this.details = details;
+    }
 }

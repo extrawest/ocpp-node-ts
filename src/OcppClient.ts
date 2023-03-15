@@ -82,7 +82,9 @@ import {UrnOCPPCp220203NotifyReportResponse} from './types/NotifyReportResponse'
 import {UrnOCPPCp220203PublishFirmwareRequest} from './types/PublishFirmwareRequest'
 import {UrnOCPPCp220203PublishFirmwareResponse} from './types/PublishFirmwareResponse'
 import {UrnOCPPCp220203PublishFirmwareStatusNotificationRequest} from './types/PublishFirmwareStatusNotificationRequest'
-import {UrnOCPPCp220203PublishFirmwareStatusNotificationResponse} from './types/PublishFirmwareStatusNotificationResponse'
+import {
+    UrnOCPPCp220203PublishFirmwareStatusNotificationResponse
+} from './types/PublishFirmwareStatusNotificationResponse'
 import {UrnOCPPCp220203ReportChargingProfilesRequest} from './types/ReportChargingProfilesRequest'
 import {UrnOCPPCp220203ReportChargingProfilesResponse} from './types/ReportChargingProfilesResponse'
 import {UrnOCPPCp220203RequestStartTransactionRequest} from './types/RequestStartTransactionRequest'

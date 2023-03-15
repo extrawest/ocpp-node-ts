@@ -52,7 +52,7 @@ export class Protocol {
         }
     }
 
-    public callRequest(request: string, payload: any): Promise<any> {  //TODO: try to replace any to generic or unknown
+    public callRequest(request: string, payload: unknown): Promise<unknown> {
         return new Promise((resolve, reject) => {
             try {
                 const messageId = uuidv4();

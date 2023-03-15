@@ -7,6 +7,7 @@ import {
     CancelReservationResponse
 } from "./index";
 import {OutgoingHttpHeaders} from "http";
+
 jest.mock("./impl/Client")
 
 let ocppCl: OcppClient;
@@ -17,7 +18,8 @@ describe("Test Ocpp Client Connection methods", () => {
     });
 
     it("test callRequest method", async () => {
-        const fakeCallRequest = jest.fn((request: string, payload: any) => {});
+        const fakeCallRequest = jest.fn((request: string, payload: any) => {
+        });
         jest.mock('./impl/Client', () => {
             return jest.fn().mockImplementation(() => {
                 return {callRequest: fakeCallRequest};
@@ -38,7 +40,8 @@ describe("Test Ocpp Client Connection methods", () => {
 
     it("test on method", () => {
         const spy = jest.spyOn(ocppCl, "on")
-        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {});
+        const fakeOn = jest.fn((event: string | symbol, listener: (...args: any[]) => void) => {
+        });
         jest.mock('./OcppClient', () => {
             return jest.fn().mockImplementation(() => {
                 return {on: fakeOn};
@@ -53,7 +56,8 @@ describe("Test Ocpp Client Connection methods", () => {
 
     it("test connect method", () => {
         const spy = jest.spyOn(ocppCl, "connect")
-        const fakeConnect = jest.fn((centralSystemUrl: string, headers?: OutgoingHttpHeaders) => {});
+        const fakeConnect = jest.fn((centralSystemUrl: string, headers?: OutgoingHttpHeaders) => {
+        });
         jest.mock('./OcppClient', () => {
             return jest.fn().mockImplementation(() => {
                 return {on: fakeConnect};
