@@ -1,27 +1,40 @@
-import {OcppServer} from "./OcppServer";
 import {OcppClient} from "./OcppClient";
-jest.mock("./impl/Server");
-jest.mock("./impl/Client");
+import {jest} from "@jest/globals";
+import {WS} from "jest-websocket-mock";
+import {Protocol} from "./impl/Protocol";
+import {BootNotificationRequest, BootNotificationResponse} from "./index";
+jest.mock("./impl/Client")
+let ocppClCon: OcppClient;
+let ws: WS;
 
-describe("Test ocpp server", () => {
-    it("test server auth", () => {
-        const server = new OcppServer();
-        server.listen(8181);
-        const client = new OcppClient('cp1');
-        client.connect('ws://host.docker.internal:3000/');
-        client.callRequest("Authorize", {
-            idToken: {
-                idToken: "sdsd",
-                type: "Central"
-            }
+describe("Test Ocpp Client Connection methods", () => {
+    beforeEach(() => {
+        ws = new WS('ws://localhost:1234');
+        ocppClCon = new OcppClient("testId");
+    });
+
+    it("test callRequest method", async () => {
+        const fakeCallRequest = jest.fn((request: string, payload: any) => {});
+        jest.mock('./impl/Client', () => {
+            return jest.fn().mockImplementation(() => {
+                return {callRequest: fakeCallRequest};
+            });
         });
-        expect(client.callRequest).toBeCalled();
-        expect(client.callRequest).toBeCalledTimes(1);
-        expect(client.callRequest).toBeCalledWith("Authorize", {
-            idToken: {
-                idToken: "sdsd",
-                type: "Central"
-            }
-        });
+        const boot: BootNotificationRequest = {
+            chargingStation: {
+                model: "sda",
+                vendorName: "sad"
+            },
+            reason: "Unknown"
+        };
+        const bootResp: BootNotificationResponse = await ocppClCon.callRequest('BootNotification', boot);
+        expect(ocppClCon.callRequest).toBeCalled();
+        expect(ocppClCon.callRequest).toBeCalledTimes(1);
+        expect(ocppClCon.callRequest).toBeCalledWith("BootNotification", boot);
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+        ws.close();
     });
 });

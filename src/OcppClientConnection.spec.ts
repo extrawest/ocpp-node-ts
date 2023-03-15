@@ -4,7 +4,7 @@ import {WS} from "jest-websocket-mock";
 import {Protocol} from "./impl/Protocol";
 import {BootNotificationRequest, BootNotificationResponse} from "./index";
 jest.mock("./impl/Client")
-//jest.mock("./OcppClientConnection")
+
 
 let ocppClCon = new OcppClientConnection("testId");
 let ws: WS;
