@@ -2,7 +2,6 @@ import {OcppClient} from "./OcppClient";
 import {jest} from "@jest/globals";
 import {
     BootNotificationRequest,
-    BootNotificationResponse,
     CancelReservationRequest,
     CancelReservationResponse
 } from "./index";

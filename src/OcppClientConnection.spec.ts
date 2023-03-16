@@ -22,7 +22,7 @@ describe("Test Ocpp Client Connection methods", () => {
                 return {getCpId: () => fakeGetCpId};
             });
         });
-        const cpId = ocppClCon.getCpId();
+        ocppClCon.getCpId();
         expect(ocppClCon.getCpId).toBeCalled()
         expect(ocppClCon.getCpId).toBeCalledTimes(1)
     });
