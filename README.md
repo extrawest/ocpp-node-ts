@@ -1,4 +1,7 @@
 ![Maintaner](https://img.shields.io/badge/maintainer-extrawest.com-blue)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/extrawest/ocpp-node-ts)
+![GitHub release](https://img.shields.io/github/v/release/extrawest/ocpp-node-ts)
+[![GitHub tag](https://img.shields.io/github/v/tag/extrawest/ocpp-node-ts)](https://github.com/extrawest/ocpp-node-ts/tags/)
 # Extrawest OCPP 2.0.1 package
 
 Typescript package implementing the JSON version of the Open Charge Point Protocol (OCPP). Currently OCPP 2.0.1 is
@@ -111,3 +114,7 @@ chargingPointSimple.connect('wss://somecs.com/ocpp/', {
 });
 ```
 
+---
+Created by Extrawest Node.js Team
+[Extrawest.com](https://www.extrawest.com), 2023
+---
