@@ -2,6 +2,11 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/extrawest/ocpp-node-ts)
 ![GitHub release](https://img.shields.io/github/v/release/extrawest/ocpp-node-ts)
 [![GitHub tag](https://img.shields.io/github/v/tag/extrawest/ocpp-node-ts)](https://github.com/extrawest/ocpp-node-ts/tags/)
+#### Test coverage
+![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg?style=flat)
+![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg?style=flat)
+![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat)
+![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg?style=flat)
 # Extrawest OCPP 2.0.1 package
 
 Based on great package [sepych/ocpp-ts][sepych/ocpp-ts] for OCPP 1.6 version.
