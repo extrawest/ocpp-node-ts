@@ -13,8 +13,6 @@ import { OcppClientConnection } from "../OcppClientConnection";
 import { Protocol } from "./Protocol";
 
 export class Server extends EventEmitter {
-	private server: WebSocket.Server | null = null;
-
 	private clients: Array<Client> = [];
 
 	/* istanbul ignore next */

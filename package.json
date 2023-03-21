@@ -10,7 +10,8 @@
     "build": "tsc",
     "test": "jest",
     "lint": "eslint src --ext .ts,.tsx",
-	"lint:fix": "eslint src --ext .ts,.tsx --fix"
+	"lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "create-badges": "istanbul-badges-readme"
   },
   "keywords": [
     "ocpp",
@@ -66,7 +67,7 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageReporters": ["json-summary"],
+    "coverageReporters": ["json-summary", "lcov"],
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],

@@ -18,7 +18,7 @@ describe(
 		});
 
 		it(
-			"test getCpId method",
+			"Test method 'getCpId'. Should run method 'getCpId' correctly",
 			() => {
 				const fakeGetCpId = jest.fn().mockReturnValue("testId");
 				jest.mock(
@@ -36,7 +36,7 @@ describe(
 		);
 
 		it(
-			"test setConnection method",
+			"Test method 'setConnection'. Should run method 'setConnection' correctly",
 			() => {
 				const spySetConnection = jest.spyOn(
 					ocppClCon,
@@ -56,7 +56,7 @@ describe(
 		);
 
 		it(
-			"test callRequest method",
+			"Test method 'callRequest'. Should run method 'callRequest' correctly",
 			() => {
 				ocppClCon.callRequest(
 					"CancelReservation",
@@ -73,7 +73,7 @@ describe(
 		);
 
 		it(
-			"test on method",
+			"Test method 'on'. Should run method 'on' correctly",
 			() => {
 				jest.spyOn(
 					ocppClCon,

@@ -14,7 +14,7 @@ describe(
 		});
 
 		it(
-			"test callRequest method",
+			"Test method 'callRequest'. Should run method 'callRequest' correctly ",
 			async () => {
 
 				const boot: BootNotificationRequest = {
@@ -38,7 +38,7 @@ describe(
 		);
 
 		it(
-			"test on method",
+			"Test method 'on'. Should run method 'on' correctly",
 			() => {
 				jest.spyOn(
 					ocppCl,
@@ -59,7 +59,7 @@ describe(
 		);
 
 		it(
-			"test connect method",
+			"Test method 'connect'. Should run method 'connect' correctly",
 			() => {
 				jest.spyOn(
 					ocppCl,

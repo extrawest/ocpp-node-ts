@@ -8,7 +8,7 @@ import {
 } from "./OcppError";
 
 describe(
-	"OcppSchema",
+	"Test SchemaValidator's validate method.",
 	() => {
 		const customSchema = {
 			"$schema": "http://json-schema.org/draft-06/schema#",
