@@ -39,6 +39,10 @@ export class Protocol {
 			const [messageType, ...rest] = JSON.parse(message);
 
 			if (messageType === CALL_MESSAGE && rest.length === 3) {
+				this.eventEmitter.emit(
+					"call",
+					message,
+				);
 				const [messageId, action, payload] = rest;
 				this.onCall(
 					messageId,
@@ -46,12 +50,20 @@ export class Protocol {
 					payload
 				);
 			} else if (messageType === CALLRESULT_MESSAGE && rest.length === 2) {
+				this.eventEmitter.emit(
+					"call_result",
+					message
+				);
 				const [messageId, payload] = rest;
 				this.onCallResult(
 					messageId,
 					payload
 				);
 			} else if (messageType === CALLERROR_MESSAGE && rest.length === 3) {
+				this.eventEmitter.emit(
+					"call_error",
+					message,
+				);
 				const [messageId, errorCode, errorDescription, errorDetails] = rest;
 				this.onCallError(
 					messageId,
@@ -81,6 +93,12 @@ export class Protocol {
 					messageId,
 					request,
 					payload]);
+
+				this.eventEmitter.emit(
+					"call",
+					result,
+				);
+
 				this.socket.send(result);
 				this.pendingCalls[messageId] = {
 					resolve,
@@ -117,6 +135,12 @@ export class Protocol {
 				error.code,
 				error.message,
 				error.details || {}]);
+
+			this.eventEmitter.emit(
+				"call_error",
+				result
+			);
+
 			this.socket.send(result);
 		} catch (e) {
 			console.error(e);
@@ -238,6 +262,12 @@ export class Protocol {
 				CALLRESULT_MESSAGE,
 				messageId,
 				responsePayload]);
+
+			this.eventEmitter.emit(
+				"call_result",
+				result
+			);
+
 			this.socket.send(result);
 		} catch (e) {
 			if (e instanceof SyntaxError) {
