@@ -249,6 +249,7 @@ export class Protocol {
 					new OcppError(
 						ERROR_INTERNALERROR,
 						"An internal error occurred and the receiver was not able to process the requested Action",
+						e,
 					),
 				);
 			}
