@@ -313,6 +313,18 @@ export class OcppClientConnection extends Client {
 		) => void
 	): this;
 	on(
+		event: "call",
+		listener: (target: "cs" | "csms", message: string) => void
+	): this;
+	on(
+		event: "call_result",
+		listener: (target: "cs" | "csms", message: string) => void
+	): this;
+	on(
+		event: "call_error",
+		listener: (target: "cs" | "csms", message: string) => void
+	): this;
+	on(
 		event: "close",
 		listener: (code: number, reason: Buffer) => void
 	): this;
